@@ -107,8 +107,13 @@ export function SettingsPanel({ isOpen, onClose, settings, onSave }: SettingsPan
 
   const handleSave = () => {
     // 验证 API Key
-    if ((aiMode === 'api' || aiMode === 'hybrid') && !localSettings.api.key) {
-      toast.error(t('settings.api_key_required') || 'API/混合模式需要填写 API Key');
+    // 验证 API Key
+    if (aiMode === 'api' && !localSettings.api.key) {
+      toast.error(t('settings.api_key_required') || 'API模式需要填写 API Key');
+      return;
+    }
+    if (aiMode === 'hybrid' && !localSettings.hybrid.api_key) {
+      toast.error(t('settings.api_key_required') || '混合模式需要填写 API Key');
       return;
     }
 

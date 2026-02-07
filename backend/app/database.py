@@ -67,9 +67,20 @@ class Database:
                     is_archived INTEGER DEFAULT 0,
                     has_attachments INTEGER DEFAULT 0,
                     attachment_count INTEGER DEFAULT 0,
-                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    needs_reply INTEGER DEFAULT 0
                 )
             """)
+            
+            # Migration: Ensure needs_reply column exists for old databases
+            try:
+                conn.execute("SELECT needs_reply FROM emails LIMIT 1")
+            except Exception:
+                try:
+                    conn.execute("ALTER TABLE emails ADD COLUMN needs_reply INTEGER DEFAULT 0")
+                    print("Database migration: Added 'needs_reply' column.")
+                except Exception as e:
+                    print(f"Database migration failed: {e}")
             
             # Create indexes
             conn.execute("CREATE INDEX IF NOT EXISTS idx_emails_date ON emails(date_received)")
