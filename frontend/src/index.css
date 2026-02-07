@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* 东方数字斋馆 - 色彩系统 (Mapped to ThemeContext) */
+    --xuanzhi-yellow: var(--bg-primary);
+    --ivory-white: var(--bg-secondary);
+    --withered-white: var(--bg-tertiary);
+    --tea-white: var(--bg-tertiary);
+
+    --pine-ink: var(--text-primary);
+    --light-ink: var(--text-secondary);
+    --dry-ink: var(--text-muted);
+
+    --cinnabar: var(--accent-red);
+    --cinnabar-light: var(--accent-red-light);
+    --amber: var(--accent-yellow);
+    --amber-light: var(--accent-yellow-light);
+    --indigo: var(--accent-blue);
+    --indigo-light: var(--accent-blue-light);
+
+    --pale-ochre: var(--border-primary);
+    --faint-ochre: var(--border-secondary);
+
+    --ink-shadow: rgba(42, 42, 42, 0.04);
+
+    /* shadcn变量映射 */
+    --background: 40 23% 94%;
+    --foreground: 0 0% 16%;
+    --card: 43 33% 99%;
+    --card-foreground: 0 0% 16%;
+    --popover: 43 33% 99%;
+    --popover-foreground: 0 0% 16%;
+    --primary: 6 46% 53%;
+    --primary-foreground: 40 23% 94%;
+    --secondary: 40 14% 94%;
+    --secondary-foreground: 0 0% 16%;
+    --muted: 40 14% 94%;
+    --muted-foreground: 0 0% 42%;
+    --accent: 32 44% 65%;
+    --accent-foreground: 0 0% 16%;
+    --destructive: 6 46% 53%;
+    --destructive-foreground: 40 23% 94%;
+    --border: 38 18% 90%;
+    --input: 38 18% 90%;
+    --ring: 6 46% 53%;
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--xuanzhi-yellow);
+    color: var(--pine-ink);
+  }
+}
+
+@layer components {
+
+  /* 页面容器 */
+  .page-container {
+    background-color: var(--xuanzhi-yellow);
+    min-height: 100vh;
+  }
+
+  /* 象牙白卡片 */
+  .ivory-card {
+    background-color: var(--ivory-white);
+    border-radius: 16px;
+    border: 1px solid var(--pale-ochre);
+  }
+
+  /* DDL卡片 - 横向滑块 */
+  .ddl-card {
+    width: 160px;
+    height: 90px;
+    background-color: var(--ivory-white);
+    border-radius: 16px;
+    border-top: 3px solid var(--urgency-color, var(--indigo));
+    box-shadow: 0 1px 2px var(--ink-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .ddl-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--ink-shadow);
+  }
+
+  .ddl-card.urgent {
+    --urgency-color: var(--cinnabar);
+    background-color: var(--cinnabar-light);
+  }
+
+  .ddl-card.warning {
+    --urgency-color: var(--amber);
+    background-color: var(--amber-light);
+  }
+
+  .ddl-card.normal {
+    --urgency-color: var(--indigo);
+    background-color: var(--indigo-light);
+  }
+
+  /* DDL横向滚动容器 */
+  .ddl-scroll-container {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 4px 4px 12px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--pale-ochre) transparent;
+  }
+
+  .ddl-scroll-container::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .ddl-scroll-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .ddl-scroll-container::-webkit-scrollbar-thumb {
+    background-color: var(--pale-ochre);
+    border-radius: 4px;
+  }
+
+  /* 邮件行 - 紧凑72px */
+  .email-row {
+    height: 72px;
+    padding: 0 20px;
+    background-color: var(--ivory-white);
+    border: 1px solid var(--pale-ochre);
+    border-radius: 16px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  /* 未读左侧色条 */
+  .email-row::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 20%;
+    height: 60%;
+    width: 2px;
+    background: var(--urgency-color, var(--indigo));
+    border-radius: 0 2px 2px 0;
+  }
+
+  .email-row.urgent::before {
+    background: var(--cinnabar);
+  }
+
+  .email-row.warning::before {
+    background: var(--amber);
+  }
+
+  .email-row.normal::before {
+    background: var(--indigo);
+  }
+
+  /* 已读状态 */
+  .email-row.read {
+    background-color: var(--withered-white);
+    opacity: 0.9;
+  }
+
+  .email-row.read::before {
+    width: 1px;
+    background: var(--faint-ochre);
+    border-style: dashed;
+    border-width: 0 1px 0 0;
+  }
+
+  .email-row.read .email-subject {
+    color: var(--dry-ink);
+    font-weight: 400;
+  }
+
+  /* Hover效果 */
+  .email-row:hover {
+    background-color: var(--tea-white);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px var(--ink-shadow);
+  }
+
+  /* 操作按钮（默认隐藏） */
+  .email-actions {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    display: flex;
+    gap: 8px;
+  }
+
+  .email-row:hover .email-actions {
+    opacity: 1;
+  }
+
+  /* 胶囊筛选标签 */
+  .filter-pill {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+  }
+
+  .filter-pill:hover {
+    opacity: 0.8;
+  }
+
+  .filter-pill.active {
+    color: var(--ivory-white);
+  }
+
+  .filter-pill.all.active {
+    background-color: var(--pine-ink);
+  }
+
+  .filter-pill.urgent.active {
+    background-color: var(--cinnabar);
+  }
+
+  .filter-pill.warning.active {
+    background-color: var(--amber);
+  }
+
+  .filter-pill.normal.active {
+    background-color: var(--indigo);
+  }
+
+  .filter-pill:not(.active) {
+    background-color: transparent;
+    color: var(--light-ink);
+    border-color: var(--pale-ochre);
+  }
+
+  /* 统计卡片 */
+  .stat-card {
+    background-color: var(--ivory-white);
+    border-radius: 16px;
+    border: 1px solid var(--pale-ochre);
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--ink-shadow);
+  }
+
+  .stat-card .icon-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+  }
+
+  .stat-card .stat-number {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-card .stat-label {
+    font-size: 13px;
+    color: var(--light-ink);
+  }
+
+  /* 时间粒度选择器 */
+  .time-selector {
+    display: inline-flex;
+    background-color: var(--withered-white);
+    border-radius: 12px;
+    padding: 4px;
+    border: 1px solid var(--pale-ochre);
+  }
+
+  .time-selector button {
+    padding: 6px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    color: var(--light-ink);
+  }
+
+  .time-selector button:hover {
+    color: var(--pine-ink);
+  }
+
+  .time-selector button.active {
+    background-color: var(--ivory-white);
+    color: var(--cinnabar);
+    box-shadow: 0 1px 3px var(--ink-shadow);
+  }
+
+  /* 分割线 */
+  .divider-ochre {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--pale-ochre), transparent);
+    margin: 20px 0;
+  }
+
+  /* 动画 */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.4s ease-out forwards;
+  }
+
+  .stagger-1 {
+    animation-delay: 50ms;
+  }
+
+  .stagger-2 {
+    animation-delay: 100ms;
+  }
+
+  .stagger-3 {
+    animation-delay: 150ms;
+  }
+
+  .stagger-4 {
+    animation-delay: 200ms;
+  }
+
+  .stagger-5 {
+    animation-delay: 250ms;
+  }
+}
+
+@layer utilities {
+
+  /* 文字层级 */
+  .text-pine {
+    color: var(--pine-ink);
+  }
+
+  .text-light-ink {
+    color: var(--light-ink);
+  }
+
+  .text-dry-ink {
+    color: var(--dry-ink);
+  }
+
+  .text-cinnabar {
+    color: var(--cinnabar);
+  }
+
+  .text-amber {
+    color: var(--amber);
+  }
+
+  .text-indigo {
+    color: var(--indigo);
+  }
+
+  /* 背景色 */
+  .bg-xuanzhi {
+    background-color: var(--xuanzhi-yellow);
+  }
+
+  .bg-ivory {
+    background-color: var(--ivory-white);
+  }
+
+  .bg-withered {
+    background-color: var(--withered-white);
+  }
+
+  /* 行数限制 */
+  .line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Dark Mode Specific Styles */
+.theme-dark body::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, rgba(240, 196, 149, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.theme-dark .ddl-card {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-primary);
+}
+
+.theme-dark .ddl-card.urgent {
+  border-color: rgba(232, 131, 115, 0.3);
+  box-shadow: 0 0 12px rgba(232, 131, 115, 0.08);
+  /* Glow effect */
+}
+
+/* Urgent Indicator Glow */
+.theme-dark .email-row.urgent::before {
+  box-shadow: 0 0 8px rgba(232, 131, 115, 0.4);
+}
+
+.theme-dark .email-row.warning::before {
+  box-shadow: 0 0 8px rgba(240, 196, 149, 0.3);
+}
+
+/* Attachment Icon visibility */
+.theme-dark .email-attachment-icon {
+  background-color: rgba(240, 196, 149, 0.1);
+  color: var(--accent-yellow);
+  padding: 4px;
+  border-radius: 4px;
+}
+
+/* Text glow for empty states */
+.theme-dark .empty-state-text {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  color: #707070;
+}
+
+/* Scrollbar adjustment */
+.theme-dark ::-webkit-scrollbar-thumb {
+  background-color: #505050;
+  border-radius: 2px;
+}
+
+.theme-dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #E8E6E3;
+}

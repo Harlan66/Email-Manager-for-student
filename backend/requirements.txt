@@ -1,0 +1,23 @@
+# Email-Manager Backend
+
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic==2.9.2
+pydantic-settings==2.5.2
+
+# Database
+aiosqlite==0.20.0
+
+# IMAP
+imap-tools==1.7.0
+
+# AI
+ollama==0.3.3
+openai==1.51.0
+
+# Utils
+pyyaml==6.0.2
+python-dateutil==2.9.0
+
+# CORS
+python-multipart==0.0.12

@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+backend/build/
+backend/dist/
+backend/*.spec
+backend/email_manager.db
+backend/config.yaml
+.venv/
+venv/
+ENV/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.env*
+
+# OS
+.DS_Store
+Thumbs.db
