@@ -350,11 +350,10 @@ class Database:
         now = datetime.now()
         
         with self.get_connection() as conn:
-            # 查找已读但未回复的邮件，按收到时间排序取等待最久的一条
-            # 假设：已读且非归档的邮件即为待回复
+            # 查找标记为待回复的邮件，按收到时间排序取等待最久的一条
             row = conn.execute("""
                 SELECT id, sender_name, sender_email, date_received FROM emails 
-                WHERE is_read = 1 
+                WHERE needs_reply = 1 
                 AND is_archived = 0
                 ORDER BY date_received ASC
                 LIMIT 1
