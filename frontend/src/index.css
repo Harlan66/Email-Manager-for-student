@@ -487,3 +487,104 @@
 .theme-dark ::-webkit-scrollbar-thumb:hover {
   background-color: #E8E6E3;
 }
+/* Dark Mode Overrides for Specific Components */
+.dark .settings-modal-content {
+  background-color: var(--bg-primary) !important;
+  border-color: var(--border-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark .settings-section-card {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-primary) !important;
+  box-shadow: none !important;
+}
+
+.dark .settings-section-title {
+  color: var(--text-muted) !important;
+}
+
+.dark .settings-label {
+  color: var(--text-secondary) !important;
+}
+
+.dark .radio-card {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-primary) !important;
+  box-shadow: none !important;
+}
+
+.dark .radio-title {
+  color: var(--text-primary) !important;
+}
+
+.dark .radio-desc {
+  color: var(--text-muted) !important;
+}
+
+.dark .btn-secondary-fix {
+  background-color: transparent !important;
+  border-color: var(--border-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark .btn-secondary-fix:hover {
+  background-color: var(--bg-hover) !important;
+}
+
+/* Shadcn UI Dark Mode Variable Overrides */
+.dark {
+  --background: 0 0% 7%;
+  --foreground: 40 10% 90%;
+  --card: 0 0% 9%;
+  --card-foreground: 40 10% 90%;
+  --popover: 0 0% 9%;
+  --popover-foreground: 40 10% 90%;
+  --primary: 40 10% 90%;
+  --primary-foreground: 0 0% 9%;
+  --secondary: 0 0% 12%;
+  --secondary-foreground: 40 10% 90%;
+  --muted: 0 0% 12%;
+  --muted-foreground: 0 0% 60%;
+  --accent: 0 0% 12%;
+  --accent-foreground: 40 10% 90%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 40 10% 90%;
+  --border: 0 0% 20%;
+  --input: 0 0% 20%;
+  --ring: 0 0% 30%;
+}
+
+/* Missing utility classes from V4 report */
+.settings-section-card {
+  @apply rounded-xl p-4 border transition-all;
+  background-color: var(--ivory-white);
+  border-color: var(--pale-ochre);
+}
+
+.settings-label {
+  @apply text-sm font-medium mb-1 block;
+  color: var(--light-ink);
+}
+
+.radio-card {
+  @apply relative flex items-start space-x-3 rounded-lg border p-4 cursor-pointer transition-all hover:bg-accent;
+  background-color: var(--ivory-white);
+  border-color: var(--pale-ochre);
+}
+
+.radio-title {
+  @apply font-medium leading-none mb-1 block;
+  color: var(--pine-ink);
+}
+
+.radio-desc {
+  @apply text-xs leading-snug block;
+  color: var(--light-ink);
+}
+
+.settings-section-title {
+  @apply text-sm font-medium mb-3 flex items-center;
+  color: var(--light-ink);
+}
+

@@ -115,22 +115,30 @@ class AIService:
         )
     
     def _call_api(self, messages: list, provider: str = None, model: str = None, max_tokens: int = 150) -> str:
-        """统一的API调用方法，支持所有兼容OpenAI格式的服务商"""
-        try:
-            provider = provider or self.api_provider
-            model = model or self.api_model
-            
-            client = self._get_api_client(provider)
-            
-            response = client.chat.completions.create(
-                model=model,
-                messages=messages,
-                max_tokens=max_tokens
-            )
-            return response.choices[0].message.content.strip()
-        except Exception as e:
-            print(f"API call failed ({provider}/{model}): {e}")
-            return ""
+        """统一的API调用方法，支持所有兼容OpenAI格式的服务商，带重试机制"""
+        import time
+        
+        provider = provider or self.api_provider
+        model = model or self.api_model
+        
+        retries = 3
+        for attempt in range(retries):
+            try:
+                client = self._get_api_client(provider)
+                
+                response = client.chat.completions.create(
+                    model=model,
+                    messages=messages,
+                    max_tokens=max_tokens
+                )
+                return response.choices[0].message.content.strip()
+            except Exception as e:
+                print(f"API call failed ({provider}/{model}), attempt {attempt + 1}/{retries}: {e}")
+                if attempt < retries - 1:
+                    time.sleep(1 * (attempt + 1))  # Exponential backoff
+                else:
+                    return ""
+        return ""
     
     def process_email(self, email_data: Dict[str, Any]) -> Email:
         """
@@ -550,7 +558,8 @@ Summary:"""
             return response['message']['content'].strip()
         except Exception as e:
             print(f"Local summarization failed: {e}")
-            return ""
+            # Fallback to simple rule-based summary (first 100 chars)
+            return text[:200] + "..." if len(text) > 200 else text
     
     # === API Model Methods ===
     

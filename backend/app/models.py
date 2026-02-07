@@ -96,6 +96,7 @@ class Email(BaseModel):
     ai_processed: bool = False
     ai_mode: Optional[AIMode] = None
     privacy_level: PrivacyLevel = PrivacyLevel.NORMAL
+    needs_reply: bool = False  # New field for smart reply detection
 
 
 class EmailCreate(BaseModel):

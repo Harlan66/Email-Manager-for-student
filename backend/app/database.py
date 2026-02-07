@@ -129,14 +129,21 @@ class Database:
             ).fetchone()
             return result is not None
     
-    def get_emails(
-        self,
-        time_range: TimeRange = TimeRange.ALL,
-        priority: Optional[Priority] = None,
-        is_archived: Optional[bool] = None,
-        limit: int = 100,
-        offset: int = 0
-    ) -> List[Email]:
+    def get_urgent_emails(self, limit: int = 5) -> List[Email]:
+        """Get emails that need reply or are urgent."""
+        conn = self._get_conn()
+        cursor = conn.cursor()
+        
+        # 优先获取需要回复的邮件，其次是紧急邮件
+        cursor.execute("""
+            SELECT * FROM emails 
+            WHERE (needs_reply = 1 OR urgency = 'high') AND is_archived = 0
+            ORDER BY date_received DESC
+            LIMIT ?
+        """, (limit,))
+        
+        rows = cursor.fetchall()
+        return [self._row_to_email(row) for row in rows]
         """Get emails with filtering."""
         conditions = []
         params = []

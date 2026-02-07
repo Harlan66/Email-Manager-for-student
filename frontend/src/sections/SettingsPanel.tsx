@@ -106,6 +106,12 @@ export function SettingsPanel({ isOpen, onClose, settings, onSave }: SettingsPan
   };
 
   const handleSave = () => {
+    // 验证 API Key
+    if ((aiMode === 'api' || aiMode === 'hybrid') && !localSettings.api.key) {
+      toast.error(t('settings.api_key_required') || 'API/混合模式需要填写 API Key');
+      return;
+    }
+
     // Update global theme context
     setTheme(localSettings.theme);
     setLanguage(localSettings.language);

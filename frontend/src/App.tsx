@@ -63,8 +63,9 @@ function App() {
             api.fetchSettings().catch(() => defaultSettings)
           ]);
 
-          setEmails(emailsData.length > 0 ? emailsData : mockEmailList);
-          setUrgentDDLs(ddlData.length > 0 ? ddlData : urgentDDLList);
+          // 空数组也是有效数据，仅在 API 不可用时使用 Mock
+          setEmails(emailsData);
+          setUrgentDDLs(ddlData);
           setSettings(settingsData);
 
           toast.success('数据加载完成', { description: '已连接到后端服务' });
