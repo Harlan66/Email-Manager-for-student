@@ -8,6 +8,7 @@ import os
 import shutil
 import subprocess
 import sys
+import platform
 
 def run(cmd, cwd=None):
     """执行命令"""
@@ -21,9 +22,6 @@ def main():
     # 检查前置条件
     if not shutil.which("npm"):
         print("错误: 需要安装 Node.js 和 npm")
-        sys.exit(1)
-    if not shutil.which("pyinstaller"):
-        print("错误: 需要安装 PyInstaller (pip install pyinstaller)")
         sys.exit(1)
     
     # 获取根目录
@@ -52,30 +50,66 @@ def main():
     print(f"已复制到 {web_dir}")
     
     # 3. PyInstaller 打包
-    print("\n=== 打包 EXE ===")
+    is_windows = platform.system() == "Windows"
+    is_mac = platform.system() == "Darwin"
+    
+    ext = ".exe" if is_windows else ""
+    target_name = "EmailManager"
+    if is_mac:
+        target_name_full = f"{target_name}.app"
+    else:
+        target_name_full = f"{target_name}{ext}"
+
+    print(f"\n=== 打包 {target_name_full} ===")
+    
+    # 确保 backend/requirements.txt 中的依赖已安装 (特别是 pyinstaller 和 pywebview)
+    # 自动尝试安装缺失依赖
+    try:
+        import pyinstaller
+    except ImportError:
+        print("正在安装 PyInstaller...")
+        run(f"{sys.executable} -m pip install pyinstaller")
+    
+    try:
+        import webview
+    except ImportError:
+        print("正在安装 pywebview...")
+        run(f"{sys.executable} -m pip install pywebview")
+
+    # 安装 requirements.txt
+    print("正在安装后端依赖...")
+    run(f"{sys.executable} -m pip install -r requirements.txt", cwd=backend_dir)
+
+    # 路径分隔符
+    sep = ";" if is_windows else ":"
+    
     # 确保 desktop.py 存在
     if not os.path.exists(os.path.join(backend_dir, "desktop.py")):
-         # 如果不存在，可能是因为上次通过 git rebase 恢复时未创建，这里临时创建一下，或者确认文件是否存在
          print("错误: backend/desktop.py 不存在")
          sys.exit(1)
 
+    icon_path = "NONE"
+    icon_flag = f'--icon="{icon_path}" ' if icon_path != "NONE" else ""
+
     run(
         f'pyinstaller --onefile --windowed '
-        f'--add-data "web:web" '
-        f'--name "EmailManager" '
-        f'--icon=NONE '
+        f'--add-data "web{sep}web" '
+        f'--name "{target_name}" '
+        f'{icon_flag}'
         f'--clean '
         f'desktop.py',
         cwd=backend_dir
     )
     
     # 4. 输出结果
-    exe_path = os.path.join(backend_dir, "dist", "EmailManager.exe")
-    if os.path.exists(exe_path):
-        print(f"\n✅ 打包成功: {exe_path}")
-        print(f"📦 文件大小: {os.path.getsize(exe_path) / 1024 / 1024:.1f} MB")
+    output_path = os.path.join(backend_dir, "dist", target_name_full)
+    if os.path.exists(output_path):
+        print(f"\n✅ 打包成功: {output_path}")
+        if not is_mac: # macOS .app is a directory
+            print(f"📦 文件大小: {os.path.getsize(output_path) / 1024 / 1024:.1f} MB")
     else:
         print("\n❌ 打包失败")
 
 if __name__ == "__main__":
     main()
+
