@@ -10,6 +10,7 @@ import { SettingsPanel } from '@/sections/SettingsPanel';
 import { CalendarModal } from '@/sections/CalendarModal';
 import { HelpGuide } from '@/sections/HelpGuide';
 import { NotificationPanel } from '@/sections/NotificationPanel';
+import { SyncProgressModal } from '@/components/SyncProgressModal';
 import {
   urgentDDLList,
   emailList as mockEmailList,
@@ -35,7 +36,6 @@ function App() {
 
   // 加载状态
   const [isLoading, setIsLoading] = useState(false);
-  const [isSyncing, setIsSyncing] = useState(false);
   const [isApiAvailable, setIsApiAvailable] = useState(false);
 
   // 弹窗状态
@@ -45,6 +45,7 @@ function App() {
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
   const [isHelpOpen, setIsHelpOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+  const [isSyncProgressOpen, setIsSyncProgressOpen] = useState(false);
 
   // 检查API可用性并加载初始数据
   useEffect(() => {
@@ -63,7 +64,7 @@ function App() {
             api.fetchSettings().catch(() => defaultSettings)
           ]);
 
-          // 空数组也是有效数据，仅在 API 不可用时使用 Mock
+          // Empty arrays are valid - user just has no emails yet
           setEmails(emailsData);
           setUrgentDDLs(ddlData);
           setSettings(settingsData);
@@ -95,36 +96,39 @@ function App() {
         api.fetchDDL()
       ]);
 
-      setEmails(emailsData.length > 0 ? emailsData : mockEmailList);
-      setUrgentDDLs(ddlData.length > 0 ? ddlData : urgentDDLList);
+      // Don't fallback to mock - empty is valid (user has no emails yet)
+      setEmails(emailsData);
+      setUrgentDDLs(ddlData);
     } catch (error) {
       console.error('Error refreshing data:', error);
     }
   }, [isApiAvailable]);
 
-  // 同步邮件
+  // 同步邮件 - 使用进度弹窗
   const handleSync = useCallback(async () => {
+    console.log('[handleSync] isApiAvailable:', isApiAvailable);
     if (!isApiAvailable) {
       toast.info('演示模式', { description: '请先运行 EmailManager.exe 启动后端服务' });
       return;
     }
+    console.log('[handleSync] opening sync progress modal');
+    setIsSyncProgressOpen(true);
+  }, [isApiAvailable]);
 
-    setIsSyncing(true);
-    try {
-      const result = await api.syncEmails();
+  // 同步完成回调
+  const handleSyncComplete = useCallback(async (result: { success: boolean; message: string; synced: number; processed: number }) => {
+    setIsSyncProgressOpen(false);
 
-      if (result.success) {
-        toast.success(result.message);
-        await refreshData();
-      } else {
-        toast.error(result.message);
-      }
-    } catch (error) {
-      toast.error('同步失败', { description: String(error) });
-    } finally {
-      setIsSyncing(false);
+    // Always refresh data regardless of success/failure
+    // This ensures any emails that were synced before an error are shown
+    await refreshData();
+
+    if (result.success) {
+      toast.success(result.message, { description: `AI处理: ${result.processed} 封` });
+    } else {
+      toast.error(result.message);
     }
-  }, [isApiAvailable, refreshData]);
+  }, [refreshData]);
 
   // 处理时间粒度切换
   const handleTimeRangeChange = useCallback((range: TimeRange) => {
@@ -308,11 +312,11 @@ function App() {
               variant="ghost"
               size="sm"
               onClick={handleSync}
-              disabled={isSyncing}
+              disabled={isSyncProgressOpen}
               className="h-9 px-3 rounded-xl hover:bg-gray-100 transition-all"
               title={t('nav.sync')}
             >
-              {isSyncing ? (
+              {isSyncProgressOpen ? (
                 <Loader2 className="w-4 h-4 animate-spin" style={{ color: '#6B6B6B' }} />
               ) : (
                 <RefreshCw className="w-4 h-4" style={{ color: '#6B6B6B' }} />
@@ -334,10 +338,6 @@ function App() {
               className="w-9 h-9 p-0 rounded-xl hover:bg-gray-100 relative"
             >
               <Bell className="w-4 h-4" style={{ color: '#6B6B6B' }} />
-              <span
-                className="absolute top-2 right-2 w-2 h-2 rounded-full"
-                style={{ backgroundColor: URGENCY_COLORS.urgent.main }}
-              />
             </Button>
             <Button
               variant="outline"
@@ -438,6 +438,13 @@ function App() {
       <NotificationPanel
         isOpen={isNotificationOpen}
         onClose={() => setIsNotificationOpen(false)}
+      />
+
+      {/* 同步进度 */}
+      <SyncProgressModal
+        isOpen={isSyncProgressOpen}
+        onComplete={handleSyncComplete}
+        days={40}
       />
     </div>
   );

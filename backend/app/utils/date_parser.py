@@ -102,6 +102,11 @@ def format_relative_time(dt: Optional[datetime]) -> str:
     if not dt:
         return ""
     
+    # Handle timezone-aware datetimes by converting to naive (local time)
+    if dt.tzinfo is not None:
+        # Convert to local time and remove timezone info
+        dt = dt.replace(tzinfo=None)
+    
     now = datetime.now()
     
     # Handle future dates

@@ -1,13 +1,60 @@
 """
 FastAPI main application entry point for Email-Manager.
 """
+import logging
+from logging.handlers import RotatingFileHandler
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from .routers import emails, stats, settings
 from .database import get_database
-from .utils.paths import get_resource_dir
+from .utils.paths import get_resource_dir, get_logs_dir
+
+# Configure logging
+def setup_logging():
+    """Setup logging to console and file."""
+    logs_dir = get_logs_dir()
+    log_file = logs_dir / "email_manager.log"
+    
+    # Create formatter
+    formatter = logging.Formatter(
+        '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S'
+    )
+    
+    # Console handler
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+    console_handler.setFormatter(formatter)
+    
+    # File handler with rotation (5MB max, keep 3 backups)
+    file_handler = RotatingFileHandler(
+        log_file,
+        maxBytes=5*1024*1024,
+        backupCount=3,
+        encoding='utf-8'
+    )
+    file_handler.setLevel(logging.DEBUG)
+    file_handler.setFormatter(formatter)
+    
+    # Setup root logger
+    root_logger = logging.getLogger()
+    root_logger.setLevel(logging.DEBUG)
+    root_logger.addHandler(console_handler)
+    root_logger.addHandler(file_handler)
+    
+    # Also configure uvicorn loggers
+    for logger_name in ['uvicorn', 'uvicorn.access', 'uvicorn.error']:
+        logger = logging.getLogger(logger_name)
+        logger.handlers = []
+        logger.addHandler(console_handler)
+        logger.addHandler(file_handler)
+    
+    logging.info(f"Logging initialized. Log file: {log_file}")
+
+setup_logging()
+logger = logging.getLogger(__name__)
 
 # Create FastAPI app
 app = FastAPI(

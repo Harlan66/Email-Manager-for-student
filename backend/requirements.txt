@@ -21,3 +21,6 @@ python-dateutil==2.9.0
 
 # CORS
 python-multipart==0.0.12
+
+# SSE for streaming sync
+sse-starlette==2.1.0

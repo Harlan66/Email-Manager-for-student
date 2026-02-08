@@ -157,20 +157,20 @@ class AIService:
         privacy_result = PrivacyService.scan(subject, body)
         
         # Step 2: Determine processing mode based on privacy level
-        if PrivacyService.should_disable_ai(privacy_result):
-            # Use rule-based processing only
+        # In LOCAL mode, always process locally (privacy-safe since data never leaves device)
+        if self.mode == AIMode.LOCAL:
+            # Local mode is always privacy-safe
+            email = self._process_local(email_data, privacy_result)
+        elif PrivacyService.should_disable_ai(privacy_result):
+            # Only disable AI for extreme privacy in API/hybrid modes
             email = self._rule_based_process(email_data, privacy_result)
         elif PrivacyService.should_use_local(privacy_result):
-            # Force local processing
+            # Force local processing for high privacy in hybrid mode
             email = self._process_local(email_data, privacy_result)
-        else:
-            # Use configured mode
-            if self.mode == AIMode.LOCAL:
-                email = self._process_local(email_data, privacy_result)
-            elif self.mode == AIMode.API:
-                email = self._process_api(email_data, privacy_result)
-            else:  # HYBRID
-                email = self._process_hybrid(email_data, privacy_result)
+        elif self.mode == AIMode.API:
+            email = self._process_api(email_data, privacy_result)
+        else:  # HYBRID
+            email = self._process_hybrid(email_data, privacy_result)
         
         return email
     
@@ -414,6 +414,11 @@ class AIService:
     
     def _classify_local(self, subject: str, body: str) -> Priority:
         """Classify email using local Ollama model."""
+        # First check pre-classification rules for consistency on known patterns
+        pre_result = self._pre_classify_rules(subject, body)
+        if pre_result is not None:
+            return pre_result
+        
         try:
             import ollama
             
@@ -421,7 +426,7 @@ class AIService:
 可选: urgent(紧急), important(重要), normal(日常), archive(归档)
 
 判断标准:
-- urgent: deadline < 3天, 考试通知, 紧急行政通知
+- urgent: deadline < 3天, 考试通知, 紧急行政通知, 安全提醒
 - important: 作业, 小测, 成绩相关, 注册通知
 - normal: 一般通知, 活动邀请, 新闻
 - archive: 确认邮件, 广告, 已过期
@@ -450,11 +455,40 @@ class AIService:
             # Fall back to rule-based
             return self._classify_rule_based(subject, body)
     
+    def _pre_classify_rules(self, subject: str, body: str) -> Optional[Priority]:
+        """
+        Pre-classification rules for known patterns to ensure consistency.
+        Returns None if no rule matches (defer to LLM).
+        """
+        subject_lower = subject.lower()
+        
+        # Security alerts are always urgent
+        security_patterns = ["安全提醒", "security alert", "新登录", "new login", 
+                            "验证码", "verification", "密码", "password", 
+                            "两步验证", "2-step", "通行密钥", "passkey"]
+        for pattern in security_patterns:
+            if pattern in subject_lower:
+                return Priority.URGENT
+        
+        # Final Call / Deadline in subject = urgent
+        deadline_patterns = ["final call", "最后召集", "deadline", "截止"]
+        for pattern in deadline_patterns:
+            if pattern in subject_lower:
+                return Priority.URGENT
+        
+        return None
+    
     def _classify_rule_based(self, subject: str, body: str) -> Priority:
         """Rule-based classification fallback."""
         content = f"{subject} {body}".lower()
         
-        urgent_keywords = ["urgent", "紧急", "deadline", "截止", "考试", "exam", "asap"]
+        # Security alerts (always urgent)
+        security_keywords = ["安全提醒", "security alert", "新登录", "new login"]
+        for kw in security_keywords:
+            if kw in content:
+                return Priority.URGENT
+        
+        urgent_keywords = ["urgent", "紧急", "deadline", "截止", "考试", "exam", "asap", "final call"]
         for kw in urgent_keywords:
             if kw in content:
                 return Priority.URGENT

@@ -40,6 +40,19 @@ class Config:
                 "confirm_before_api": True
             }
         },
+        "sync": {
+            "first_sync": {
+                "days": 7,
+                "batch_size": 10,
+                "delay_between_batches_ms": 500
+            },
+            "incremental_sync": {
+                "days": 3,
+                "batch_size": 20,
+                "delay_between_batches_ms": 200
+            },
+            "max_emails_per_sync": 200
+        },
         "ui": {
             "theme": "light",
             "language": "zh",
@@ -110,6 +123,15 @@ class Config:
         """
         keys = key.split('.')
         data = self.data
+        
+        # Clean value if it's an email setting
+        if isinstance(value, str) and key.startswith("email."):
+            if key == "email.password":
+                # Strip ALL whitespace for passwords (e.g. Gmail app passwords)
+                value = "".join(value.split())
+            else:
+                value = value.replace('\xa0', ' ').strip()
+            
         for k in keys[:-1]:
             if k not in data:
                 data[k] = {}

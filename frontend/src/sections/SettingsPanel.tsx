@@ -17,7 +17,12 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
-import { testIMAPConnection, testLocalAIConnection, testAPIConnection } from '@/services/api';
+import {
+  testIMAPConnection,
+  testLocalAIConnection,
+  testAPIConnection,
+  exportTestReport
+} from '@/services/api';
 import {
   Mail,
   Bot,
@@ -27,7 +32,9 @@ import {
   Cloud,
   Layers,
   Check,
-  Loader2
+  Loader2,
+  Eye,
+  EyeOff
 } from 'lucide-react';
 import type { SettingsConfig, AIMode, APIProvider } from '@/types';
 import { LOCAL_MODELS, API_PROVIDERS, API_MODELS, URGENCY_COLORS } from '@/types';
@@ -73,15 +80,46 @@ const radioOptions: RadioCardOption[] = [
 
 export function SettingsPanel({ isOpen, onClose, settings, onSave }: SettingsPanelProps) {
   const { setTheme, setLanguage, t } = useTheme();
-  const [localSettings, setLocalSettings] = useState<SettingsConfig>(settings);
+  // Clear masked passwords on initialization so user must re-enter
+  const initSettings = (): SettingsConfig => {
+    const s = { ...settings };
+    // Clear masked password placeholders
+    if (s.email?.password === '***') {
+      s.email = { ...s.email, password: '' };
+    }
+    if (s.api?.key === '***') {
+      s.api = { ...s.api, key: '' };
+    }
+    if (s.hybrid?.api_key === '***') {
+      s.hybrid = { ...s.hybrid, api_key: '' };
+    }
+    return s;
+  };
+  const [localSettings, setLocalSettings] = useState<SettingsConfig>(initSettings);
   const [aiMode, setAiMode] = useState<AIMode>(settings.ai_mode);
   const [testingConnection, setTestingConnection] = useState<string | null>(null);
+  const [showPassword, setShowPassword] = useState(false);
+  const [isDirty, setIsDirty] = useState(false);
+
+  // Handle close with unsaved changes check
+  const handleClose = () => {
+    if (isDirty) {
+      if (!window.confirm('有未保存的更改，确定要退出吗？')) {
+        return;
+      }
+    }
+    setIsDirty(false);
+    onClose();
+  };
 
   const updateEmailConfig = (field: string, value: string) => {
+    // Auto-trim password and strip invisible chars
+    const cleanValue = field === 'password' ? value.replace(/\s+/g, '') : value.trim();
     setLocalSettings(prev => ({
       ...prev,
-      email: { ...prev.email, [field]: value }
+      email: { ...prev.email, [field]: cleanValue }
     }));
+    setIsDirty(true);
   };
 
   const updateLocalConfig = (field: string, value: string) => {
@@ -89,6 +127,7 @@ export function SettingsPanel({ isOpen, onClose, settings, onSave }: SettingsPan
       ...prev,
       local: { ...prev.local, [field]: value }
     }));
+    setIsDirty(true);
   };
 
   const updateApiConfig = (field: string, value: string) => {
@@ -96,6 +135,7 @@ export function SettingsPanel({ isOpen, onClose, settings, onSave }: SettingsPan
       ...prev,
       api: { ...prev.api, [field]: value }
     }));
+    setIsDirty(true);
   };
 
   const updateHybridConfig = (field: string, value: string | boolean) => {
@@ -103,6 +143,7 @@ export function SettingsPanel({ isOpen, onClose, settings, onSave }: SettingsPan
       ...prev,
       hybrid: { ...prev.hybrid, [field]: value }
     }));
+    setIsDirty(true);
   };
 
   const handleSave = () => {
@@ -122,6 +163,7 @@ export function SettingsPanel({ isOpen, onClose, settings, onSave }: SettingsPan
     setLanguage(localSettings.language);
     // Save to parent component
     onSave({ ...localSettings, ai_mode: aiMode });
+    setIsDirty(false);
     toast.success('设置已保存');
     onClose();
   };
@@ -133,7 +175,15 @@ export function SettingsPanel({ isOpen, onClose, settings, onSave }: SettingsPan
     try {
       let result: any;
       if (type === '邮箱') {
-        result = await testIMAPConnection();
+        // Only send password if it's been changed (not empty)
+        const testParams: { imap_server?: string; email?: string; password?: string } = {
+          imap_server: localSettings.email.imap_server,
+          email: localSettings.email.email,
+        };
+        if (localSettings.email.password && localSettings.email.password !== '***') {
+          testParams.password = localSettings.email.password;
+        }
+        result = await testIMAPConnection(testParams);
       } else if (type === 'Ollama') {
         result = await testLocalAIConnection();
       } else if (type === 'API') {
@@ -361,6 +411,7 @@ export function SettingsPanel({ isOpen, onClose, settings, onSave }: SettingsPan
         <Label className="form-label" style={{ color: 'var(--light-ink)' }}>API Key</Label>
         <Input
           type="password"
+          autoComplete="new-password"
           value={localSettings.hybrid.api_key}
           onChange={(e) => updateHybridConfig('api_key', e.target.value)}
           placeholder="sk-..."
@@ -385,7 +436,7 @@ export function SettingsPanel({ isOpen, onClose, settings, onSave }: SettingsPan
   );
 
   return (
-    <Sheet open={isOpen} onOpenChange={onClose}>
+    <Sheet open={isOpen} onOpenChange={handleClose}>
       <SheetContent
         className="w-[440px] p-0 overflow-hidden settings-modal-content"
       >
@@ -448,14 +499,26 @@ export function SettingsPanel({ isOpen, onClose, settings, onSave }: SettingsPan
               </div>
               <div className="space-y-2">
                 <Label className="form-label settings-label">{t('settings.password')}</Label>
-                <Input
-                  type="password"
-                  value={localSettings.email.password}
-                  onChange={(e) => updateEmailConfig('password', e.target.value)}
-                  placeholder="••••••••••••"
-                  className="h-10 rounded-lg border-gray-200"
-                  style={{ backgroundColor: 'var(--withered-white)' }}
-                />
+                <div className="relative">
+                  <Input
+                    type={showPassword ? "text" : "password"}
+                    autoComplete="new-password"
+                    id="email-password-input"
+                    name="email-password-input"
+                    value={localSettings.email.password}
+                    onChange={(e) => updateEmailConfig('password', e.target.value)}
+                    placeholder={t('settings.placeholder.password')}
+                    className="h-10 pr-10 rounded-lg border-gray-200"
+                    style={{ backgroundColor: 'var(--ivory-white)' }}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none"
+                  >
+                    {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                  </button>
+                </div>
               </div>
               <Button
                 variant="outline"
@@ -613,6 +676,26 @@ export function SettingsPanel({ isOpen, onClose, settings, onSave }: SettingsPan
                   </Select>
                 </div>
               </div>
+            </div>
+
+            {/* 开发者工具 */}
+            <div className="pt-2 border-t border-gray-100">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={async () => {
+                  try {
+                    await exportTestReport();
+                    toast.success('测试报告已导出');
+                  } catch (e) {
+                    toast.error('导出失败', { description: String(e) });
+                  }
+                }}
+                className="w-full h-9 rounded-lg text-xs"
+                style={{ color: 'var(--light-ink)' }}
+              >
+                📊 导出测试报告 (JSON)
+              </Button>
             </div>
           </div>
         </div>

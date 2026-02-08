@@ -88,22 +88,40 @@ async def update_settings(request: SettingsUpdateRequest):
     return {"success": True, "message": "设置已保存"}
 
 
+class TestImapRequest(BaseModel):
+    imap_server: str = None
+    email: str = None
+    password: str = None
+
 @router.post("/settings/test-imap", response_model=TestConnectionResult)
-async def test_imap_connection():
-    """Test IMAP connection with current settings."""
+async def test_imap_connection(request: TestImapRequest = None):
+    """
+    Test IMAP connection.
+    If request is provided, test with those credentials.
+    Otherwise, test with saved settings.
+    """
     config = get_config()
     email_config = config.get_email_config()
     
-    if not email_config.get("imap_server") or not email_config.get("email"):
+    # Override with request data if provided
+    server = (request.imap_server if request and request.imap_server else email_config.get("imap_server"))
+    email_addr = (request.email if request and request.email else email_config.get("email"))
+    password = (request.password if request and request.password else email_config.get("password"))
+    
+    if not server or not email_addr:
         return TestConnectionResult(
             success=False,
             message="请先填写IMAP服务器和邮箱地址"
         )
     
+    # Handle masked password if the test comes from the UI without changing it
+    if password == "***":
+        password = email_config.get("password")
+    
     imap = IMAPService(
-        server=email_config.get("imap_server"),
-        email=email_config.get("email"),
-        password=email_config.get("password")
+        server=server,
+        email=email_addr,
+        password=password
     )
     
     result = imap.test_connection()

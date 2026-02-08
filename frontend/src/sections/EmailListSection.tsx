@@ -19,13 +19,40 @@ const FILTER_OPTIONS: { value: FilterType; label: string; tag: string }[] = [
 
 export function EmailListSection({ emails, onEmailClick, onArchive, onDelete }: EmailListSectionProps) {
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
+  const [activeTags, setActiveTags] = useState<string[]>([]);
+
+  // Extract all unique tags from emails
+  const allTags = useMemo(() => {
+    const tags = new Set<string>();
+    emails.forEach(e => e.tags?.forEach(t => tags.add(t)));
+    return Array.from(tags).sort();
+  }, [emails]);
+
+  // Toggle tag selection (multi-select with OR logic)
+  const toggleTag = (tag: string) => {
+    setActiveTags(prev =>
+      prev.includes(tag)
+        ? prev.filter(t => t !== tag)
+        : [...prev, tag]
+    );
+  };
 
   // 筛选和排序邮件
   const filteredEmails = useMemo(() => {
     let filtered = emails;
+
+    // Priority filter
     if (activeFilter !== 'all') {
-      filtered = emails.filter(e => e.urgency === activeFilter);
+      filtered = filtered.filter(e => e.urgency === activeFilter);
     }
+
+    // Tag filter (OR logic - email must have ANY of the selected tags)
+    if (activeTags.length > 0) {
+      filtered = filtered.filter(e =>
+        e.tags?.some(t => activeTags.includes(t))
+      );
+    }
+
     // 按紧急度排序：urgent > warning > normal > archived
     const urgencyOrder = { urgent: 0, warning: 1, normal: 2, archived: 3 };
     return filtered.sort((a, b) => {
@@ -34,7 +61,7 @@ export function EmailListSection({ emails, onEmailClick, onArchive, onDelete }: 
       // 同紧急度按时间倒序
       return 0; // 保持原有顺序
     });
-  }, [emails, activeFilter]);
+  }, [emails, activeFilter, activeTags]);
 
   // 获取紧急度样式
   const getUrgencyClass = (urgency: string) => {
@@ -88,6 +115,33 @@ export function EmailListSection({ emails, onEmailClick, onArchive, onDelete }: 
         </div>
       </div>
 
+      {/* Tag筛选 */}
+      {allTags.length > 0 && (
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className="text-xs" style={{ color: '#9B9B9B' }}>标签:</span>
+          {allTags.map((tag) => (
+            <button
+              key={tag}
+              onClick={() => toggleTag(tag)}
+              className={`px-2 py-1 text-xs rounded-full transition-all ${activeTags.includes(tag)
+                  ? 'bg-indigo-100 text-indigo-700 border border-indigo-300'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+            >
+              {tag}
+            </button>
+          ))}
+          {activeTags.length > 0 && (
+            <button
+              onClick={() => setActiveTags([])}
+              className="px-2 py-1 text-xs rounded-full bg-red-50 text-red-600 hover:bg-red-100"
+            >
+              清除
+            </button>
+          )}
+        </div>
+      )}
+
       {/* 邮件列表 */}
       <div className="space-y-2">
         {filteredEmails.map((email, index) => (
@@ -104,18 +158,18 @@ export function EmailListSection({ emails, onEmailClick, onArchive, onDelete }: 
             {/* 左侧：Tag + 主题 */}
             <div className="flex items-center gap-3 flex-1 min-w-0">
               {/* Tag */}
-              <span 
+              <span
                 className="text-base flex-shrink-0"
                 style={{ color: getTagColor(email.tag) }}
               >
                 {email.tag}
               </span>
-              
+
               {/* 主题 */}
               <span className={`email-subject text-sm truncate ${email.is_read ? '' : 'font-medium'}`} style={{ color: email.is_read ? '#9B9B9B' : '#2A2A2A' }}>
                 {email.subject}
               </span>
-              
+
               {/* 附件标识 */}
               {email.has_attachments && (
                 <Paperclip className="w-3.5 h-3.5 flex-shrink-0" style={{ color: '#9B9B9B' }} />
@@ -124,7 +178,7 @@ export function EmailListSection({ emails, onEmailClick, onArchive, onDelete }: 
 
             {/* 中间：发件人 */}
             <div className="flex items-center gap-2 mx-4 flex-shrink-0" style={{ width: '100px' }}>
-              <div 
+              <div
                 className="w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-medium text-white flex-shrink-0"
                 style={{ backgroundColor: getTagColor(email.tag) + '99' }}
               >

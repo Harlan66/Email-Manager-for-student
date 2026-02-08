@@ -42,6 +42,22 @@
 .stagger-4 { animation-delay: 200ms; }
 .stagger-5 { animation-delay: 250ms; }
 
+/* 不确定进度条动画 */
+@keyframes indeterminate {
+  0% {
+    transform: translateX(-100%);
+    width: 50%;
+  }
+  50% {
+    transform: translateX(50%);
+    width: 60%;
+  }
+  100% {
+    transform: translateX(200%);
+    width: 50%;
+  }
+}
+
 /* 表单标签 */
 .form-label {
   font-size: 11px;

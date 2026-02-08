@@ -64,3 +64,85 @@ async def get_action_cards():
         pending_attachment=pending_attachment,
         current_date=current_date
     )
+
+
+@router.get("/report/export")
+async def export_test_report():
+    """
+    Export test report as JSON.
+    Contains: email classification results, processing stats, and summary.
+    """
+    db = get_database()
+    
+    # Get all emails
+    all_emails = db.get_emails(limit=1000)
+    
+    # Classification statistics
+    priority_stats = {"urgent": 0, "important": 0, "normal": 0, "archive": 0}
+    ai_processed_count = 0
+    has_ddl_count = 0
+    needs_reply_count = 0
+    
+    emails_data = []
+    for email in all_emails:
+        # Count by priority
+        priority_stats[email.priority.value] = priority_stats.get(email.priority.value, 0) + 1
+        
+        # Count AI processed
+        if email.ai_processed:
+            ai_processed_count += 1
+        
+        # Count with DDL (deadline is stored as string)
+        if email.deadline:
+            has_ddl_count += 1
+        
+        # Count needs reply
+        if email.needs_reply:
+            needs_reply_count += 1
+        
+        # Add to export data
+        emails_data.append({
+            "id": email.id,
+            "subject": email.subject,
+            "sender": email.sender_name or email.sender_email,
+            "date": email.date_received.isoformat() if email.date_received else None,
+            "priority": email.priority.value,
+            "summary": email.summary,
+            "deadline": email.deadline,
+            "needs_reply": email.needs_reply,
+            "ai_processed": email.ai_processed,
+            "tags": email.tags,
+        })
+    
+    report = {
+        "meta": {
+            "generated_at": datetime.now().isoformat(),
+            "total_emails": len(all_emails),
+            "date_range": {
+                "from": min((e.date_received for e in all_emails if e.date_received), default=None),
+                "to": max((e.date_received for e in all_emails if e.date_received), default=None),
+            }
+        },
+        "classification_results": {
+            "by_priority": priority_stats,
+        },
+        "processing_stats": {
+            "ai_processed_count": ai_processed_count,
+            "ai_processed_rate": round(ai_processed_count / len(all_emails) * 100, 1) if all_emails else 0,
+            "has_ddl_count": has_ddl_count,
+            "needs_reply_count": needs_reply_count,
+        },
+        "accuracy": {
+            "note": "准确率需人工标注后计算，以下为自动统计数据",
+            "ddl_extraction_rate": round(has_ddl_count / len(all_emails) * 100, 1) if all_emails else 0,
+        },
+        "emails": emails_data,
+    }
+    
+    # Serialize dates in meta
+    if report["meta"]["date_range"]["from"]:
+        report["meta"]["date_range"]["from"] = report["meta"]["date_range"]["from"].isoformat()
+    if report["meta"]["date_range"]["to"]:
+        report["meta"]["date_range"]["to"] = report["meta"]["date_range"]["to"].isoformat()
+    
+    return report

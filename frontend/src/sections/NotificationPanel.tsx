@@ -23,41 +23,8 @@ interface NotificationPanelProps {
     onClose: () => void;
 }
 
-// 演示通知数据
-const mockNotifications: Notification[] = [
-    {
-        id: '1',
-        type: 'deadline',
-        title: 'DDL 提醒',
-        message: '「数据结构作业3」将在明天截止',
-        time: '5分钟前',
-        isRead: false
-    },
-    {
-        id: '2',
-        type: 'sync',
-        title: '同步完成',
-        message: '已获取 3 封新邮件',
-        time: '15分钟前',
-        isRead: false
-    },
-    {
-        id: '3',
-        type: 'email',
-        title: '新邮件',
-        message: '来自教务处的重要通知',
-        time: '1小时前',
-        isRead: true
-    },
-    {
-        id: '4',
-        type: 'system',
-        title: '系统更新',
-        message: 'Email Manager 已更新到 v1.0.0',
-        time: '2小时前',
-        isRead: true
-    }
-];
+// 通知数据 - 暂无通知时为空数组
+const mockNotifications: Notification[] = [];
 
 const typeConfig = {
     sync: { icon: Clock, color: URGENCY_COLORS.indigo.main, bg: URGENCY_COLORS.indigo.light },

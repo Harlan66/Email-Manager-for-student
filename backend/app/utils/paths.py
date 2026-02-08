@@ -14,6 +14,16 @@ def get_base_dir() -> Path:
         # Running as a normal Python script
         return Path(__file__).parent.parent.parent
 
+def get_logs_dir() -> Path:
+    """
+    Get the directory for log files.
+    Creates the directory if it doesn't exist.
+    """
+    logs_dir = get_base_dir() / "logs"
+    logs_dir.mkdir(parents=True, exist_ok=True)
+    return logs_dir
+
+
 def get_resource_dir() -> Path:
     """
     Get the directory for internal resources (static files).

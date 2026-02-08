@@ -32,7 +32,7 @@ class Database:
     @contextmanager
     def get_connection(self):
         """Get a database connection with context manager."""
-        conn = sqlite3.connect(self.db_path, detect_types=sqlite3.PARSE_DECLTYPES)
+        conn = sqlite3.connect(self.db_path)
         conn.row_factory = sqlite3.Row
         try:
             yield conn
@@ -87,6 +87,22 @@ class Database:
             conn.execute("CREATE INDEX IF NOT EXISTS idx_emails_priority ON emails(priority)")
             conn.execute("CREATE INDEX IF NOT EXISTS idx_emails_archived ON emails(is_archived)")
             conn.execute("CREATE INDEX IF NOT EXISTS idx_emails_deadline ON emails(deadline)")
+            
+            # Create sync_history table for tracking sync sessions
+            conn.execute("""
+                CREATE TABLE IF NOT EXISTS sync_history (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    sync_started_at TIMESTAMP NOT NULL,
+                    sync_completed_at TIMESTAMP,
+                    sync_type TEXT NOT NULL,
+                    days_range INTEGER,
+                    emails_synced INTEGER DEFAULT 0,
+                    emails_processed INTEGER DEFAULT 0,
+                    status TEXT DEFAULT 'in_progress',
+                    error_message TEXT
+                )
+            """)
+            conn.execute("CREATE INDEX IF NOT EXISTS idx_sync_history_started ON sync_history(sync_started_at)")
     
     def save_email(self, email: Email) -> bool:
         """Save or update an email in the database."""
@@ -142,22 +158,28 @@ class Database:
     
     def get_urgent_emails(self, limit: int = 5) -> List[Email]:
         """Get emails that need reply or are urgent."""
-        conn = self._get_conn()
-        cursor = conn.cursor()
-        
-        # 优先获取需要回复的邮件，其次是紧急邮件
-        cursor.execute("""
-            SELECT * FROM emails 
-            WHERE (needs_reply = 1 OR urgency = 'high') AND is_archived = 0
-            ORDER BY date_received DESC
-            LIMIT ?
-        """, (limit,))
-        
-        rows = cursor.fetchall()
-        return [self._row_to_email(row) for row in rows]
+        with self.get_connection() as conn:
+            # 优先获取需要回复的邮件，其次是紧急邮件
+            rows = conn.execute("""
+                SELECT * FROM emails 
+                WHERE (needs_reply = 1 OR priority IN ('urgent', 'important')) AND is_archived = 0
+                ORDER BY date_received DESC
+                LIMIT ?
+            """, (limit,)).fetchall()
+            
+            return [self._row_to_email(dict(row)) for row in rows]
+
+    def get_emails(
+        self,
+        time_range: TimeRange = TimeRange.ALL,
+        priority: Optional[Priority] = None,
+        is_archived: Optional[bool] = None,
+        limit: int = 100,
+        offset: int = 0
+    ) -> List[Email]:
         """Get emails with filtering."""
         conditions = []
-        params = []
+        params: List[Any] = []
         
         # Time range filter
         if time_range != TimeRange.ALL:
@@ -234,19 +256,23 @@ class Database:
         )
     
     def get_urgent_ddl(self, days: int = 7) -> List[UrgentDDL]:
-        """Get urgent DDL items for top notification area."""
+        """Get urgent DDL items for top notification area.
+        Only shows deadlines that are today or in the future (within 'days' days).
+        """
         now = datetime.now()
+        today_str = now.strftime("%Y-%m-%d")
         deadline_threshold = (now + timedelta(days=days)).strftime("%Y-%m-%d")
         
         with self.get_connection() as conn:
             rows = conn.execute("""
                 SELECT id, subject, deadline, priority FROM emails 
                 WHERE deadline IS NOT NULL 
+                AND deadline >= ?
                 AND deadline <= ?
                 AND is_archived = 0
                 ORDER BY deadline ASC
                 LIMIT 10
-            """, (deadline_threshold,)).fetchall()
+            """, (today_str, deadline_threshold,)).fetchall()
             
             ddl_list = []
             for row in rows:
@@ -497,6 +523,60 @@ class Database:
             ai_mode=ai_mode,
             privacy_level=privacy_level
         )
+    
+    def is_first_sync(self) -> bool:
+        """Check if this is the first sync (no successful sync history)."""
+        with self.get_connection() as conn:
+            result = conn.execute(
+                "SELECT COUNT(*) FROM sync_history WHERE status = 'completed'"
+            ).fetchone()
+            return result[0] == 0 if result else True
+    
+    def create_sync_session(self, sync_type: str, days_range: int) -> int:
+        """Create a new sync session and return its ID."""
+        from datetime import datetime
+        with self.get_connection() as conn:
+            cursor = conn.execute("""
+                INSERT INTO sync_history (sync_started_at, sync_type, days_range, status)
+                VALUES (?, ?, ?, 'in_progress')
+            """, (datetime.now().isoformat(), sync_type, days_range))
+            return cursor.lastrowid
+    
+    def complete_sync_session(self, session_id: int, emails_synced: int, emails_processed: int):
+        """Mark a sync session as completed."""
+        from datetime import datetime
+        with self.get_connection() as conn:
+            conn.execute("""
+                UPDATE sync_history
+                SET sync_completed_at = ?, emails_synced = ?, emails_processed = ?, status = 'completed'
+                WHERE id = ?
+            """, (datetime.now().isoformat(), emails_synced, emails_processed, session_id))
+    
+    def fail_sync_session(self, session_id: int, error_message: str):
+        """Mark a sync session as failed."""
+        from datetime import datetime
+        with self.get_connection() as conn:
+            conn.execute("""
+                UPDATE sync_history
+                SET sync_completed_at = ?, status = 'failed', error_message = ?
+                WHERE id = ?
+            """, (datetime.now().isoformat(), error_message, session_id))
+    
+    def get_last_successful_sync(self) -> Optional[datetime]:
+        """Get the timestamp of the last successful sync."""
+        with self.get_connection() as conn:
+            result = conn.execute("""
+                SELECT sync_completed_at FROM sync_history
+                WHERE status = 'completed'
+                ORDER BY sync_completed_at DESC
+                LIMIT 1
+            """).fetchone()
+            if result and result[0]:
+                try:
+                    return datetime.fromisoformat(result[0])
+                except (ValueError, TypeError):
+                    pass
+        return None
 
 
 # Global database instance

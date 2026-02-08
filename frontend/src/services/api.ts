@@ -85,6 +85,86 @@ export async function syncEmails(days: number = 7): Promise<SyncResult> {
     });
 }
 
+export interface SyncProgress {
+    total: number;
+    current: number;
+    synced: number;
+    processed: number;
+    message: string;
+}
+
+export interface SyncCallbacks {
+    onStatus?: (status: string, message: string) => void;
+    onProgress?: (progress: SyncProgress) => void;
+    onComplete?: (result: SyncResult) => void;
+    onError?: (message: string) => void;
+}
+
+/**
+ * Sync emails with real-time progress updates via SSE
+ */
+export async function syncEmailsWithProgress(
+    days: number,
+    callbacks: SyncCallbacks
+): Promise<void> {
+    const url = `${API_BASE_URL}/emails/sync-stream?days=${days}`;
+
+    try {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            callbacks.onError?.(`HTTP error: ${response.status}`);
+            return;
+        }
+
+        const reader = response.body?.getReader();
+        if (!reader) {
+            callbacks.onError?.('无法读取响应流');
+            return;
+        }
+
+        const decoder = new TextDecoder();
+        let buffer = '';
+
+        while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+
+            buffer += decoder.decode(value, { stream: true });
+            const lines = buffer.split('\n');
+            buffer = lines.pop() || '';
+
+            for (const line of lines) {
+                if (line.startsWith('event:')) {
+                    continue; // Skip event line, data follows
+                }
+                if (line.startsWith('data:')) {
+                    const dataStr = line.slice(5).trim();
+                    if (!dataStr) continue;
+
+                    try {
+                        const data = JSON.parse(dataStr);
+                        // Determine event type from data structure
+                        if ('status' in data && typeof data.status === 'string') {
+                            callbacks.onStatus?.(data.status, data.message);
+                        } else if ('total' in data && 'current' in data) {
+                            callbacks.onProgress?.(data as SyncProgress);
+                        } else if ('success' in data) {
+                            callbacks.onComplete?.(data as SyncResult);
+                        } else if ('message' in data && !('success' in data)) {
+                            callbacks.onError?.(data.message);
+                        }
+                    } catch {
+                        // Ignore JSON parse errors
+                    }
+                }
+            }
+        }
+    } catch (error) {
+        callbacks.onError?.(error instanceof Error ? error.message : '同步失败');
+    }
+}
+
 /**
  * Mark an email as read
  */
@@ -212,9 +292,14 @@ export async function saveSettings(settings: Partial<SettingsConfig>): Promise<v
 /**
  * Test IMAP connection
  */
-export async function testIMAPConnection(): Promise<TestConnectionResult> {
+export async function testIMAPConnection(settings?: {
+    imap_server?: string;
+    email?: string;
+    password?: string;
+}): Promise<TestConnectionResult> {
     return fetchApi<TestConnectionResult>('/settings/test-imap', {
         method: 'POST',
+        body: settings ? JSON.stringify(settings) : undefined,
     });
 }
 
@@ -249,4 +334,18 @@ export async function checkApiHealth(): Promise<boolean> {
     } catch {
         return false;
     }
+}
+
+/**
+ * Export test report as JSON file
+ */
+export async function exportTestReport(): Promise<void> {
+    const report = await fetchApi<Record<string, unknown>>('/report/export');
+    const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `email-manager-report-${new Date().toISOString().slice(0, 10)}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
 }

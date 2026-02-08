@@ -1,0 +1,197 @@
+2026-02-08 17:37:27 - root - INFO - Logging initialized. Log file: /Users/a1/project/Email-Manager-for-student/backend/logs/email_manager.log
+2026-02-08 17:37:27 - uvicorn.error - INFO - Started server process [78686]
+2026-02-08 17:37:27 - uvicorn.error - INFO - Started server process [78686]
+2026-02-08 17:37:27 - uvicorn.error - INFO - Waiting for application startup.
+2026-02-08 17:37:27 - uvicorn.error - INFO - Waiting for application startup.
+2026-02-08 17:37:27 - uvicorn.error - INFO - Application startup complete.
+2026-02-08 17:37:27 - uvicorn.error - INFO - Application startup complete.
+2026-02-08 17:37:27 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-02-08 17:37:27 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-02-08 17:37:28 - uvicorn.access - INFO - 127.0.0.1:62684 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 17:37:28 - uvicorn.access - INFO - 127.0.0.1:62685 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 17:37:28 - uvicorn.access - INFO - 127.0.0.1:62688 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 17:37:28 - uvicorn.access - INFO - 127.0.0.1:62690 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 17:37:28 - uvicorn.access - INFO - 127.0.0.1:62692 - "GET /api/settings HTTP/1.1" 200
+2026-02-08 17:37:28 - uvicorn.access - INFO - 127.0.0.1:62688 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 17:37:28 - uvicorn.access - INFO - 127.0.0.1:62690 - "GET /api/settings HTTP/1.1" 200
+2026-02-08 17:37:28 - uvicorn.access - INFO - 127.0.0.1:62697 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 17:37:28 - uvicorn.access - INFO - 127.0.0.1:62685 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 17:37:28 - uvicorn.access - INFO - 127.0.0.1:62684 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 17:37:37 - uvicorn.access - INFO - 127.0.0.1:62701 - "HEAD /health HTTP/1.1" 405
+2026-02-08 17:37:40 - uvicorn.access - INFO - 127.0.0.1:62699 - "PUT /api/settings HTTP/1.1" 200
+2026-02-08 17:37:46 - uvicorn.access - INFO - 127.0.0.1:62705 - "GET /api/emails/sync-stream?days=40 HTTP/1.1" 200
+2026-02-08 17:46:29 - app.routers.emails - INFO - SSE: Fetched 48 emails for processing
+2026-02-08 17:46:29 - uvicorn.access - INFO - 127.0.0.1:62892 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:46:29 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 17:47:28 - uvicorn.access - INFO - 127.0.0.1:63061 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 17:52:28 - uvicorn.access - INFO - 127.0.0.1:63246 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 17:57:28 - uvicorn.access - INFO - 127.0.0.1:63415 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 18:02:28 - uvicorn.access - INFO - 127.0.0.1:63599 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 18:07:19 - uvicorn.access - INFO - 127.0.0.1:63757 - "OPTIONS /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 18:07:19 - uvicorn.access - INFO - 127.0.0.1:63759 - "OPTIONS /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 18:07:19 - uvicorn.access - INFO - 127.0.0.1:63757 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 18:07:19 - uvicorn.access - INFO - 127.0.0.1:63759 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 18:07:26 - uvicorn.access - INFO - 127.0.0.1:63761 - "OPTIONS /api/emails/455/read HTTP/1.1" 200
+2026-02-08 18:07:26 - uvicorn.access - INFO - 127.0.0.1:63761 - "PUT /api/emails/455/read HTTP/1.1" 200
+2026-02-08 18:07:28 - uvicorn.access - INFO - 127.0.0.1:63773 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 18:07:29 - uvicorn.access - INFO - 127.0.0.1:63761 - "OPTIONS /api/emails/454/read HTTP/1.1" 200
+2026-02-08 18:07:29 - uvicorn.access - INFO - 127.0.0.1:63761 - "PUT /api/emails/454/read HTTP/1.1" 200
+2026-02-08 18:07:42 - uvicorn.access - INFO - 127.0.0.1:63775 - "OPTIONS /api/emails/453/read HTTP/1.1" 200
+2026-02-08 18:07:42 - uvicorn.access - INFO - 127.0.0.1:63775 - "PUT /api/emails/453/read HTTP/1.1" 200
+2026-02-08 18:07:46 - uvicorn.access - INFO - 127.0.0.1:63775 - "OPTIONS /api/emails/450/read HTTP/1.1" 200
+2026-02-08 18:07:46 - uvicorn.access - INFO - 127.0.0.1:63775 - "PUT /api/emails/450/read HTTP/1.1" 200
+2026-02-08 18:11:28 - uvicorn.access - INFO - 127.0.0.1:63960 - "OPTIONS /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 18:11:28 - uvicorn.access - INFO - 127.0.0.1:63962 - "OPTIONS /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 18:11:28 - uvicorn.access - INFO - 127.0.0.1:63963 - "OPTIONS /api/settings HTTP/1.1" 200
+2026-02-08 18:11:28 - uvicorn.access - INFO - 127.0.0.1:63960 - "OPTIONS /api/settings HTTP/1.1" 200
+2026-02-08 18:11:28 - uvicorn.access - INFO - 127.0.0.1:63966 - "OPTIONS /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 18:11:28 - uvicorn.access - INFO - 127.0.0.1:63963 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 18:11:28 - uvicorn.access - INFO - 127.0.0.1:63962 - "GET /api/settings HTTP/1.1" 200
+2026-02-08 18:11:28 - uvicorn.access - INFO - 127.0.0.1:63968 - "OPTIONS /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 18:11:28 - uvicorn.access - INFO - 127.0.0.1:63969 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 18:11:28 - uvicorn.access - INFO - 127.0.0.1:63963 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 18:11:28 - uvicorn.access - INFO - 127.0.0.1:63962 - "GET /api/settings HTTP/1.1" 200
+2026-02-08 18:11:28 - uvicorn.access - INFO - 127.0.0.1:63968 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 18:11:28 - uvicorn.access - INFO - 127.0.0.1:63970 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 18:11:28 - uvicorn.access - INFO - 127.0.0.1:63970 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 18:12:29 - uvicorn.access - INFO - 127.0.0.1:64062 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 18:13:10 - uvicorn.access - INFO - 127.0.0.1:64091 - "GET /api/emails/sync-stream?days=40 HTTP/1.1" 200
+2026-02-08 18:13:11 - app.services.imap_service - ERROR - IMAP connection failed: Response status "OK" expected, but "NO" received. Data: [b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)']
+2026-02-08 18:13:12 - uvicorn.access - INFO - 127.0.0.1:64091 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 18:13:12 - uvicorn.access - INFO - 127.0.0.1:64096 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 18:13:20 - uvicorn.access - INFO - 127.0.0.1:64102 - "OPTIONS /api/settings HTTP/1.1" 200
+2026-02-08 18:13:20 - uvicorn.access - INFO - 127.0.0.1:64102 - "PUT /api/settings HTTP/1.1" 200
+2026-02-08 18:13:22 - uvicorn.access - INFO - 127.0.0.1:64102 - "GET /api/emails/sync-stream?days=40 HTTP/1.1" 200
+2026-02-08 18:18:51 - app.services.imap_service - ERROR - Error fetching emails: command: UID => [OVERQUOTA] Account exceeded command or bandwidth limits.
+2026-02-08 18:18:51 - uvicorn.access - INFO - 127.0.0.1:64248 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 18:22:28 - uvicorn.access - INFO - 127.0.0.1:64421 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 18:27:28 - uvicorn.access - INFO - 127.0.0.1:64589 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 18:32:28 - uvicorn.access - INFO - 127.0.0.1:64767 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 18:37:28 - uvicorn.access - INFO - 127.0.0.1:64944 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 18:38:51 - uvicorn.access - INFO - 127.0.0.1:64999 - "OPTIONS /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 18:38:51 - uvicorn.access - INFO - 127.0.0.1:65000 - "OPTIONS /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 18:38:51 - uvicorn.access - INFO - 127.0.0.1:64999 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 18:38:51 - uvicorn.access - INFO - 127.0.0.1:65000 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 18:42:28 - uvicorn.access - INFO - 127.0.0.1:65168 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 18:47:28 - uvicorn.access - INFO - 127.0.0.1:65353 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 18:52:28 - uvicorn.access - INFO - 127.0.0.1:49163 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 18:57:28 - uvicorn.access - INFO - 127.0.0.1:49329 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 19:02:28 - uvicorn.access - INFO - 127.0.0.1:49515 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 19:07:28 - uvicorn.access - INFO - 127.0.0.1:49691 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 19:12:28 - uvicorn.access - INFO - 127.0.0.1:49877 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 19:17:28 - uvicorn.access - INFO - 127.0.0.1:50044 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 19:22:28 - uvicorn.access - INFO - 127.0.0.1:50220 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 19:27:28 - uvicorn.access - INFO - 127.0.0.1:50387 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 19:29:34 - uvicorn.access - INFO - 127.0.0.1:50477 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 19:29:34 - uvicorn.access - INFO - 127.0.0.1:50479 - "OPTIONS /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 19:29:34 - uvicorn.access - INFO - 127.0.0.1:50484 - "OPTIONS /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 19:29:34 - uvicorn.access - INFO - 127.0.0.1:50486 - "OPTIONS /api/settings HTTP/1.1" 200
+2026-02-08 19:29:34 - uvicorn.access - INFO - 127.0.0.1:50479 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 19:29:34 - uvicorn.access - INFO - 127.0.0.1:50490 - "OPTIONS /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 19:29:34 - uvicorn.access - INFO - 127.0.0.1:50486 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 19:29:34 - uvicorn.access - INFO - 127.0.0.1:50484 - "GET /api/settings HTTP/1.1" 200
+2026-02-08 19:29:34 - uvicorn.access - INFO - 127.0.0.1:50492 - "OPTIONS /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 19:29:34 - uvicorn.access - INFO - 127.0.0.1:50490 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 19:29:34 - uvicorn.access - INFO - 127.0.0.1:50493 - "OPTIONS /api/settings HTTP/1.1" 200
+2026-02-08 19:29:34 - uvicorn.access - INFO - 127.0.0.1:50486 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 19:29:34 - uvicorn.access - INFO - 127.0.0.1:50494 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 19:29:34 - uvicorn.access - INFO - 127.0.0.1:50493 - "GET /api/settings HTTP/1.1" 200
+2026-02-08 19:29:34 - uvicorn.access - INFO - 127.0.0.1:50494 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 19:29:34 - uvicorn.access - INFO - 127.0.0.1:50477 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 19:29:36 - uvicorn.access - INFO - 127.0.0.1:50493 - "GET /api/emails/sync-stream?days=40 HTTP/1.1" 200
+2026-02-08 19:29:38 - app.services.imap_service - ERROR - IMAP connection failed: Response status "OK" expected, but "NO" received. Data: [b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)']
+2026-02-08 19:29:39 - uvicorn.access - INFO - 127.0.0.1:50493 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 19:29:39 - uvicorn.access - INFO - 127.0.0.1:50490 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 19:29:44 - uvicorn.access - INFO - 127.0.0.1:50493 - "PUT /api/settings HTTP/1.1" 200
+2026-02-08 19:29:45 - uvicorn.access - INFO - 127.0.0.1:50493 - "GET /api/emails/sync-stream?days=40 HTTP/1.1" 200
+2026-02-08 19:35:15 - app.services.imap_service - ERROR - Error fetching emails: command: UID => [OVERQUOTA] Account exceeded command or bandwidth limits.
+2026-02-08 19:35:15 - uvicorn.access - INFO - 127.0.0.1:50683 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 19:39:34 - uvicorn.access - INFO - 127.0.0.1:50862 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 19:39:43 - uvicorn.error - INFO - Shutting down
+2026-02-08 19:39:43 - uvicorn.error - INFO - Shutting down
+2026-02-08 19:39:43 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-02-08 19:39:43 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-02-08 19:39:43 - uvicorn.error - INFO - Application shutdown complete.
+2026-02-08 19:39:43 - uvicorn.error - INFO - Application shutdown complete.
+2026-02-08 19:39:43 - uvicorn.error - INFO - Finished server process [78686]
+2026-02-08 19:39:43 - uvicorn.error - INFO - Finished server process [78686]

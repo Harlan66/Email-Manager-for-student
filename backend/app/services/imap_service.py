@@ -2,10 +2,13 @@
 IMAP service for Email-Manager.
 Handles email fetching from IMAP servers.
 """
+import logging
 from imap_tools import MailBox, AND
 from datetime import datetime, timedelta
 from typing import List, Optional, Dict, Any
 import uuid
+
+logger = logging.getLogger(__name__)
 
 
 class IMAPService:
@@ -23,7 +26,7 @@ class IMAPService:
             self.mailbox = MailBox(self.server).login(self.email, self.password)
             return True
         except Exception as e:
-            print(f"IMAP connection failed: {e}")
+            logger.error(f"IMAP connection failed: {e}")
             return False
     
     def disconnect(self):
@@ -81,7 +84,7 @@ class IMAPService:
                 "inbox_count": 0
             }
     
-    def fetch_recent(self, days: int = 7, limit: int = 50) -> List[Dict[str, Any]]:
+    def fetch_recent(self, days: int = 7, limit: int = 500) -> List[Dict[str, Any]]:
         """
         Fetch recent emails from inbox.
         
@@ -99,39 +102,76 @@ class IMAPService:
         emails = []
         
         try:
-            for msg in self.mailbox.fetch(AND(date_gte=since_date), limit=limit, reverse=True):
-                # Generate a unique ID if UID is not available
-                email_id = str(msg.uid) if msg.uid else str(uuid.uuid4())
-                
-                # Extract sender info
-                sender_email = msg.from_ or ""
-                sender_name = ""
-                if msg.from_values:
-                    sender_name = msg.from_values.name or ""
-                
-                # Get email body
-                body_text = msg.text or ""
-                body_html = msg.html or ""
-                
-                # Count attachments
-                attachments = list(msg.attachments)
-                
-                emails.append({
-                    "id": email_id,
-                    "subject": msg.subject or "(无主题)",
-                    "sender_email": sender_email,
-                    "sender_name": sender_name or self._extract_name_from_email(sender_email),
-                    "date_received": msg.date,
-                    "body_text": body_text,
-                    "body_html": body_html,
-                    "has_attachments": len(attachments) > 0,
-                    "attachment_count": len(attachments)
-                })
+            # Use headers_only=True by default to reduce bandwidth and avoid OVERQUOTA
+            # We only fetch the full body when we actually need it in the sync process
+            for msg in self.mailbox.fetch(AND(date_gte=since_date), limit=limit, reverse=True, headers_only=True):
+                emails.append(self._msg_to_dict(msg))
         except Exception as e:
-            print(f"Error fetching emails: {e}")
+            logger.error(f"Error fetching emails: {e}")
             raise
         
         return emails
+
+    def fetch_uids(self, days: int = 7) -> List[str]:
+        """Fetch UIDs of emails in the given date range."""
+        if not self.mailbox:
+            raise Exception("Not connected to IMAP server")
+        
+        since_date = (datetime.now() - timedelta(days=days)).date()
+        try:
+            return self.mailbox.uids(AND(date_gte=since_date))
+        except Exception as e:
+            logger.error(f"Error fetching UIDs: {e}")
+            return []
+
+    def fetch_by_uids(self, uids: List[str]) -> List[Dict[str, Any]]:
+        """Fetch full email content for specific UIDs."""
+        if not self.mailbox or not uids:
+            return []
+        
+        emails = []
+        try:
+            # Fetch in small batches to avoid command length limits or timeout
+            batch_size = 20
+            for i in range(0, len(uids), batch_size):
+                batch = uids[i:i + batch_size]
+                for msg in self.mailbox.fetch(AND(uid=batch)):
+                    emails.append(self._msg_to_dict(msg))
+        except Exception as e:
+            logger.error(f"Error fetching emails by UIDs: {e}")
+            raise
+        
+        return emails
+
+    def _msg_to_dict(self, msg) -> Dict[str, Any]:
+        """Convert imap_tools message to dictionary."""
+        # Generate a unique ID if UID is not available
+        email_id = str(msg.uid) if msg.uid else str(uuid.uuid4())
+        
+        # Extract sender info
+        sender_email = msg.from_ or ""
+        sender_name = ""
+        if msg.from_values:
+            sender_name = msg.from_values.name or ""
+        
+        # Get email body
+        body_text = msg.text or ""
+        body_html = msg.html or ""
+        
+        # Count attachments
+        attachments = list(msg.attachments)
+        
+        return {
+            "id": email_id,
+            "subject": msg.subject or "(无主题)",
+            "sender_email": sender_email,
+            "sender_name": sender_name or self._extract_name_from_email(sender_email),
+            "date_received": msg.date,
+            "body_text": body_text,
+            "body_html": body_html,
+            "has_attachments": len(attachments) > 0,
+            "attachment_count": len(attachments)
+        }
     
     def fetch_all(self, limit: int = 100) -> List[Dict[str, Any]]:
         """
@@ -174,7 +214,7 @@ class IMAPService:
                     "attachment_count": len(attachments)
                 })
         except Exception as e:
-            print(f"Error fetching emails: {e}")
+            logger.error(f"Error fetching all emails: {e}")
             raise
         
         return emails
