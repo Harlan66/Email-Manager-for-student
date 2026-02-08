@@ -1,0 +1,1748 @@
+2026-02-08 22:02:03 - root - INFO - Logging initialized. Log file: /Users/a1/project/Email-Manager-for-student/backend/logs/email_manager.log
+2026-02-08 22:02:03 - uvicorn.error - INFO - Started server process [88384]
+2026-02-08 22:02:03 - uvicorn.error - INFO - Started server process [88384]
+2026-02-08 22:02:03 - uvicorn.error - INFO - Waiting for application startup.
+2026-02-08 22:02:03 - uvicorn.error - INFO - Waiting for application startup.
+2026-02-08 22:02:03 - uvicorn.error - INFO - Application startup complete.
+2026-02-08 22:02:03 - uvicorn.error - INFO - Application startup complete.
+2026-02-08 22:02:24 - uvicorn.access - INFO - 127.0.0.1:56177 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:02:24 - uvicorn.access - INFO - 127.0.0.1:56177 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:02:24 - uvicorn.access - INFO - 127.0.0.1:56182 - "OPTIONS /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:02:24 - uvicorn.access - INFO - 127.0.0.1:56183 - "OPTIONS /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:02:24 - uvicorn.access - INFO - 127.0.0.1:56185 - "OPTIONS /api/settings HTTP/1.1" 200
+2026-02-08 22:02:24 - uvicorn.access - INFO - 127.0.0.1:56187 - "OPTIONS /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:02:24 - uvicorn.access - INFO - 127.0.0.1:56189 - "OPTIONS /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:02:25 - uvicorn.access - INFO - 127.0.0.1:56183 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:02:25 - uvicorn.access - INFO - 127.0.0.1:56185 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:02:25 - uvicorn.access - INFO - 127.0.0.1:56187 - "GET /api/settings HTTP/1.1" 200
+2026-02-08 22:02:25 - uvicorn.access - INFO - 127.0.0.1:56190 - "OPTIONS /api/settings HTTP/1.1" 200
+2026-02-08 22:02:25 - uvicorn.access - INFO - 127.0.0.1:56189 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:02:25 - uvicorn.access - INFO - 127.0.0.1:56182 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:02:25 - uvicorn.access - INFO - 127.0.0.1:56185 - "GET /api/settings HTTP/1.1" 200
+2026-02-08 22:02:25 - uvicorn.access - INFO - 127.0.0.1:56177 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:02:25 - uvicorn.access - INFO - 127.0.0.1:56178 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:02:36 - uvicorn.access - INFO - 127.0.0.1:56207 - "PUT /api/settings HTTP/1.1" 200
+2026-02-08 22:02:37 - uvicorn.access - INFO - 127.0.0.1:56207 - "GET /api/emails/sync-stream?days=40 HTTP/1.1" 200
+2026-02-08 22:02:37 - sse_starlette.sse - DEBUG - chunk: b'event: status\r\ndata: {"status": "connecting", "message": "\\u589e\\u91cf\\u540c\\u6b65\\uff1a\\u68c0\\u67e5\\u6700\\u8fd13\\u5929\\u65b0\\u90ae\\u4ef6..."}\r\n\r\n'
+2026-02-08 22:02:48 - sse_starlette.sse - DEBUG - chunk: b'event: status\r\ndata: {"status": "fetching", "message": "\\u6b63\\u5728\\u83b7\\u53d6\\u90ae\\u4ef6\\u5217\\u8868..."}\r\n\r\n'
+2026-02-08 22:02:59 - app.routers.emails - INFO - [SYNC DEBUG] fetch_uids returned 33 UIDs for 3 days
+2026-02-08 22:02:59 - app.routers.emails - INFO - [SYNC DEBUG] 33 emails already exist, 0 are new
+2026-02-08 22:02:59 - app.routers.emails - INFO - SSE: 33 total emails, 0 new emails to process (sync_type=incremental_sync)
+2026-02-08 22:02:59 - sse_starlette.sse - DEBUG - chunk: b'event: complete\r\ndata: {"success": true, "message": "\\u6240\\u6709\\u90ae\\u4ef6\\u5df2\\u662f\\u6700\\u65b0", "emails_synced": 0, "emails_processed": 0}\r\n\r\n'
+2026-02-08 22:03:09 - sse_starlette.sse - DEBUG - ping: b': ping - 2026-02-08 14:03:09.566561+00:00\r\n\r\n'
+2026-02-08 22:03:09 - sse_starlette.sse - DEBUG - Got event: http.disconnect. Stop streaming.
+2026-02-08 22:03:27 - uvicorn.access - INFO - 127.0.0.1:56230 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:03:27 - uvicorn.access - INFO - 127.0.0.1:56231 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:03:32 - uvicorn.access - INFO - 127.0.0.1:56243 - "OPTIONS /api/emails/458/read HTTP/1.1" 200
+2026-02-08 22:03:32 - uvicorn.access - INFO - 127.0.0.1:56243 - "PUT /api/emails/458/read HTTP/1.1" 200
+2026-02-08 22:03:36 - uvicorn.access - INFO - 127.0.0.1:56243 - "OPTIONS /api/emails/463/read HTTP/1.1" 200
+2026-02-08 22:03:36 - uvicorn.access - INFO - 127.0.0.1:56243 - "PUT /api/emails/463/read HTTP/1.1" 200
+2026-02-08 22:07:25 - uvicorn.access - INFO - 127.0.0.1:56368 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:09:18 - uvicorn.error - INFO - Shutting down
+2026-02-08 22:09:18 - uvicorn.error - INFO - Shutting down
+2026-02-08 22:09:18 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-02-08 22:09:18 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-02-08 22:09:18 - uvicorn.error - INFO - Application shutdown complete.
+2026-02-08 22:09:18 - uvicorn.error - INFO - Application shutdown complete.
+2026-02-08 22:09:18 - uvicorn.error - INFO - Finished server process [88384]
+2026-02-08 22:09:18 - uvicorn.error - INFO - Finished server process [88384]
+2026-02-08 22:09:18 - root - INFO - Logging initialized. Log file: /Users/a1/project/Email-Manager-for-student/backend/logs/email_manager.log
+2026-02-08 22:09:18 - uvicorn.error - INFO - Started server process [88567]
+2026-02-08 22:09:18 - uvicorn.error - INFO - Started server process [88567]
+2026-02-08 22:09:18 - uvicorn.error - INFO - Waiting for application startup.
+2026-02-08 22:09:18 - uvicorn.error - INFO - Waiting for application startup.
+2026-02-08 22:09:18 - uvicorn.error - INFO - Application startup complete.
+2026-02-08 22:09:18 - uvicorn.error - INFO - Application startup complete.
+2026-02-08 22:09:53 - uvicorn.access - INFO - 127.0.0.1:56626 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:09:53 - uvicorn.access - INFO - 127.0.0.1:56628 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:09:53 - uvicorn.access - INFO - 127.0.0.1:56631 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:09:53 - uvicorn.access - INFO - 127.0.0.1:56633 - "GET /api/settings HTTP/1.1" 200
+2026-02-08 22:09:53 - uvicorn.access - INFO - 127.0.0.1:56631 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:09:53 - uvicorn.access - INFO - 127.0.0.1:56637 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:09:53 - uvicorn.access - INFO - 127.0.0.1:56628 - "GET /api/settings HTTP/1.1" 200
+2026-02-08 22:09:53 - uvicorn.access - INFO - 127.0.0.1:56639 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:09:53 - uvicorn.access - INFO - 127.0.0.1:56637 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:09:53 - uvicorn.access - INFO - 127.0.0.1:56626 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:14:53 - uvicorn.access - INFO - 127.0.0.1:56853 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:17:42 - uvicorn.error - INFO - Shutting down
+2026-02-08 22:17:42 - uvicorn.error - INFO - Shutting down
+2026-02-08 22:17:42 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-02-08 22:17:42 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-02-08 22:17:42 - uvicorn.error - INFO - Application shutdown complete.
+2026-02-08 22:17:42 - uvicorn.error - INFO - Application shutdown complete.
+2026-02-08 22:17:42 - uvicorn.error - INFO - Finished server process [88567]
+2026-02-08 22:17:42 - uvicorn.error - INFO - Finished server process [88567]
+2026-02-08 22:17:58 - root - INFO - Logging initialized. Log file: /Users/a1/project/Email-Manager-for-student/backend/logs/email_manager.log
+2026-02-08 22:17:58 - uvicorn.error - INFO - Started server process [90004]
+2026-02-08 22:17:58 - uvicorn.error - INFO - Started server process [90004]
+2026-02-08 22:17:58 - uvicorn.error - INFO - Waiting for application startup.
+2026-02-08 22:17:58 - uvicorn.error - INFO - Waiting for application startup.
+2026-02-08 22:17:58 - uvicorn.error - INFO - Application startup complete.
+2026-02-08 22:17:58 - uvicorn.error - INFO - Application startup complete.
+2026-02-08 22:19:02 - uvicorn.access - INFO - 127.0.0.1:57003 - "GET / HTTP/1.1" 200
+2026-02-08 22:19:02 - uvicorn.access - INFO - 127.0.0.1:57003 - "GET /favicon.ico HTTP/1.1" 404
+2026-02-08 22:19:05 - uvicorn.access - INFO - 127.0.0.1:57020 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:19:05 - uvicorn.access - INFO - 127.0.0.1:57024 - "OPTIONS /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:19:05 - uvicorn.access - INFO - 127.0.0.1:57026 - "OPTIONS /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:19:05 - uvicorn.access - INFO - 127.0.0.1:57029 - "OPTIONS /api/settings HTTP/1.1" 200
+2026-02-08 22:19:05 - uvicorn.access - INFO - 127.0.0.1:57024 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:19:05 - uvicorn.access - INFO - 127.0.0.1:57034 - "OPTIONS /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:19:05 - uvicorn.access - INFO - 127.0.0.1:57026 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:19:05 - uvicorn.access - INFO - 127.0.0.1:57029 - "GET /api/settings HTTP/1.1" 200
+2026-02-08 22:19:05 - uvicorn.access - INFO - 127.0.0.1:57035 - "OPTIONS /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:19:05 - uvicorn.access - INFO - 127.0.0.1:57034 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:19:05 - uvicorn.access - INFO - 127.0.0.1:57036 - "OPTIONS /api/settings HTTP/1.1" 200
+2026-02-08 22:19:05 - uvicorn.access - INFO - 127.0.0.1:57035 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:19:05 - uvicorn.access - INFO - 127.0.0.1:57037 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:19:05 - uvicorn.access - INFO - 127.0.0.1:57036 - "GET /api/settings HTTP/1.1" 200
+2026-02-08 22:19:05 - uvicorn.access - INFO - 127.0.0.1:57037 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:19:05 - uvicorn.access - INFO - 127.0.0.1:57020 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:19:46 - uvicorn.error - INFO - Shutting down
+2026-02-08 22:19:46 - uvicorn.error - INFO - Shutting down
+2026-02-08 22:19:46 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-02-08 22:19:46 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-02-08 22:19:46 - uvicorn.error - INFO - Application shutdown complete.
+2026-02-08 22:19:46 - uvicorn.error - INFO - Application shutdown complete.
+2026-02-08 22:19:46 - uvicorn.error - INFO - Finished server process [90004]
+2026-02-08 22:19:46 - uvicorn.error - INFO - Finished server process [90004]
+2026-02-08 22:20:04 - root - INFO - Logging initialized. Log file: /Users/a1/project/Email-Manager-for-student/backend/logs/email_manager.log
+2026-02-08 22:20:04 - uvicorn.error - INFO - Started server process [91003]
+2026-02-08 22:20:04 - uvicorn.error - INFO - Started server process [91003]
+2026-02-08 22:20:04 - uvicorn.error - INFO - Waiting for application startup.
+2026-02-08 22:20:04 - uvicorn.error - INFO - Waiting for application startup.
+2026-02-08 22:20:04 - uvicorn.error - INFO - Application startup complete.
+2026-02-08 22:20:04 - uvicorn.error - INFO - Application startup complete.
+2026-02-08 22:20:12 - uvicorn.access - INFO - 127.0.0.1:57108 - "OPTIONS /api/emails/msg_001/read HTTP/1.1" 200
+2026-02-08 22:20:12 - uvicorn.access - INFO - 127.0.0.1:57108 - "PUT /api/emails/msg_001/read HTTP/1.1" 404
+2026-02-08 22:20:46 - uvicorn.access - INFO - 127.0.0.1:57142 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:20:46 - uvicorn.access - INFO - 127.0.0.1:57145 - "OPTIONS /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:20:46 - uvicorn.access - INFO - 127.0.0.1:57147 - "OPTIONS /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:20:46 - uvicorn.access - INFO - 127.0.0.1:57148 - "OPTIONS /api/settings HTTP/1.1" 200
+2026-02-08 22:20:46 - uvicorn.access - INFO - 127.0.0.1:57145 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:20:46 - uvicorn.access - INFO - 127.0.0.1:57148 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:20:46 - uvicorn.access - INFO - 127.0.0.1:57147 - "GET /api/settings HTTP/1.1" 200
+2026-02-08 22:20:46 - uvicorn.access - INFO - 127.0.0.1:57142 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:20:46 - uvicorn.access - INFO - 127.0.0.1:57149 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:21:26 - uvicorn.error - INFO - Shutting down
+2026-02-08 22:21:26 - uvicorn.error - INFO - Shutting down
+2026-02-08 22:21:26 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-02-08 22:21:26 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-02-08 22:21:26 - uvicorn.error - INFO - Application shutdown complete.
+2026-02-08 22:21:26 - uvicorn.error - INFO - Application shutdown complete.
+2026-02-08 22:21:26 - uvicorn.error - INFO - Finished server process [91003]
+2026-02-08 22:21:26 - uvicorn.error - INFO - Finished server process [91003]
+2026-02-08 22:21:26 - root - INFO - Logging initialized. Log file: /Users/a1/project/Email-Manager-for-student/backend/logs/email_manager.log
+2026-02-08 22:21:26 - uvicorn.error - INFO - Started server process [91059]
+2026-02-08 22:21:26 - uvicorn.error - INFO - Started server process [91059]
+2026-02-08 22:21:26 - uvicorn.error - INFO - Waiting for application startup.
+2026-02-08 22:21:26 - uvicorn.error - INFO - Waiting for application startup.
+2026-02-08 22:21:26 - uvicorn.error - INFO - Application startup complete.
+2026-02-08 22:21:26 - uvicorn.error - INFO - Application startup complete.
+2026-02-08 22:21:31 - uvicorn.error - INFO - Shutting down
+2026-02-08 22:21:31 - uvicorn.error - INFO - Shutting down
+2026-02-08 22:21:31 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-02-08 22:21:31 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-02-08 22:21:31 - uvicorn.error - INFO - Application shutdown complete.
+2026-02-08 22:21:31 - uvicorn.error - INFO - Application shutdown complete.
+2026-02-08 22:21:31 - uvicorn.error - INFO - Finished server process [91059]
+2026-02-08 22:21:31 - uvicorn.error - INFO - Finished server process [91059]
+2026-02-08 22:21:39 - root - INFO - Logging initialized. Log file: /Users/a1/project/Email-Manager-for-student/backend/logs/email_manager.log
+2026-02-08 22:21:39 - uvicorn.error - INFO - Started server process [91863]
+2026-02-08 22:21:39 - uvicorn.error - INFO - Started server process [91863]
+2026-02-08 22:21:39 - uvicorn.error - INFO - Waiting for application startup.
+2026-02-08 22:21:39 - uvicorn.error - INFO - Waiting for application startup.
+2026-02-08 22:21:39 - uvicorn.error - INFO - Application startup complete.
+2026-02-08 22:21:39 - uvicorn.error - INFO - Application startup complete.
+2026-02-08 22:22:38 - uvicorn.access - INFO - 127.0.0.1:57252 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:22:38 - uvicorn.access - INFO - 127.0.0.1:57254 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:22:38 - uvicorn.access - INFO - 127.0.0.1:57259 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:22:38 - uvicorn.access - INFO - 127.0.0.1:57260 - "GET /api/settings HTTP/1.1" 200
+2026-02-08 22:22:38 - uvicorn.access - INFO - 127.0.0.1:57259 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:22:38 - uvicorn.access - INFO - 127.0.0.1:57263 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:22:38 - uvicorn.access - INFO - 127.0.0.1:57254 - "GET /api/settings HTTP/1.1" 200
+2026-02-08 22:22:38 - uvicorn.access - INFO - 127.0.0.1:57265 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:22:38 - uvicorn.access - INFO - 127.0.0.1:57263 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:22:38 - uvicorn.access - INFO - 127.0.0.1:57252 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:22:44 - uvicorn.access - INFO - 127.0.0.1:57267 - "OPTIONS /api/settings/test-imap HTTP/1.1" 200
+2026-02-08 22:23:49 - uvicorn.access - INFO - 127.0.0.1:57267 - "POST /api/settings/test-imap HTTP/1.1" 200
+2026-02-08 22:23:49 - uvicorn.access - INFO - 127.0.0.1:57271 - "PUT /api/settings HTTP/1.1" 200
+2026-02-08 22:23:49 - uvicorn.access - INFO - 127.0.0.1:57274 - "GET /api/emails/sync-stream?days=40&force_first=false HTTP/1.1" 200
+2026-02-08 22:23:49 - sse_starlette.sse - DEBUG - chunk: b'event: status\r\ndata: {"status": "connecting", "message": "\\u589e\\u91cf\\u540c\\u6b65\\uff1a\\u68c0\\u67e5\\u6700\\u8fd13\\u5929\\u65b0\\u90ae\\u4ef6..."}\r\n\r\n'
+2026-02-08 22:23:49 - uvicorn.error - ERROR - Exception in ASGI application
+  + Exception Group Traceback (most recent call last):
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 401, in run_asgi
+  |     result = await app(  # type: ignore[func-returns-value]
+  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+  |     return await self.app(scope, receive, send)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+  |     await super().__call__(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/applications.py", line 113, in __call__
+  |     await self.middleware_stack(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+  |     await self.app(scope, receive, _send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+  |     await self.simple_response(scope, receive, send, request_headers=headers)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+  |     await self.app(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+  |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+  |     await app(scope, receive, sender)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
+  |     await self.middleware_stack(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
+  |     await route.handle(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+  |     await self.app(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+  |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+  |     await app(scope, receive, sender)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 74, in app
+  |     await response(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 268, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 783, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 271, in wrap
+    |     await func()
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 251, in stream_response
+    |     async for data in self.body_iterator:
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/app/routers/emails.py", line 105, in event_generator
+    |     days = max(days, strategy.get("days", 7))
+    |                ^^^^
+    | UnboundLocalError: cannot access local variable 'days' where it is not associated with a value
+    +------------------------------------
+2026-02-08 22:23:49 - uvicorn.error - ERROR - Exception in ASGI application
+  + Exception Group Traceback (most recent call last):
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 401, in run_asgi
+  |     result = await app(  # type: ignore[func-returns-value]
+  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+  |     return await self.app(scope, receive, send)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+  |     await super().__call__(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/applications.py", line 113, in __call__
+  |     await self.middleware_stack(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+  |     await self.app(scope, receive, _send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+  |     await self.simple_response(scope, receive, send, request_headers=headers)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+  |     await self.app(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+  |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+  |     await app(scope, receive, sender)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
+  |     await self.middleware_stack(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
+  |     await route.handle(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+  |     await self.app(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+  |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+  |     await app(scope, receive, sender)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 74, in app
+  |     await response(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 268, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 783, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 271, in wrap
+    |     await func()
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 251, in stream_response
+    |     async for data in self.body_iterator:
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/app/routers/emails.py", line 105, in event_generator
+    |     days = max(days, strategy.get("days", 7))
+    |                ^^^^
+    | UnboundLocalError: cannot access local variable 'days' where it is not associated with a value
+    +------------------------------------
+2026-02-08 22:23:56 - uvicorn.access - INFO - 127.0.0.1:57311 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:23:56 - uvicorn.access - INFO - 127.0.0.1:57312 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:24:05 - uvicorn.access - INFO - 127.0.0.1:57326 - "PUT /api/settings HTTP/1.1" 200
+2026-02-08 22:24:07 - uvicorn.access - INFO - 127.0.0.1:57326 - "GET /api/emails/sync-stream?days=40&force_first=false HTTP/1.1" 200
+2026-02-08 22:24:07 - sse_starlette.sse - DEBUG - chunk: b'event: status\r\ndata: {"status": "connecting", "message": "\\u589e\\u91cf\\u540c\\u6b65\\uff1a\\u68c0\\u67e5\\u6700\\u8fd13\\u5929\\u65b0\\u90ae\\u4ef6..."}\r\n\r\n'
+2026-02-08 22:24:07 - uvicorn.error - ERROR - Exception in ASGI application
+  + Exception Group Traceback (most recent call last):
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 401, in run_asgi
+  |     result = await app(  # type: ignore[func-returns-value]
+  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+  |     return await self.app(scope, receive, send)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+  |     await super().__call__(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/applications.py", line 113, in __call__
+  |     await self.middleware_stack(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+  |     await self.app(scope, receive, _send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+  |     await self.simple_response(scope, receive, send, request_headers=headers)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+  |     await self.app(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+  |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+  |     await app(scope, receive, sender)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
+  |     await self.middleware_stack(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
+  |     await route.handle(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+  |     await self.app(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+  |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+  |     await app(scope, receive, sender)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 74, in app
+  |     await response(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 268, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 783, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 271, in wrap
+    |     await func()
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 251, in stream_response
+    |     async for data in self.body_iterator:
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/app/routers/emails.py", line 105, in event_generator
+    |     days = max(days, strategy.get("days", 7))
+    |                ^^^^
+    | UnboundLocalError: cannot access local variable 'days' where it is not associated with a value
+    +------------------------------------
+2026-02-08 22:24:07 - uvicorn.error - ERROR - Exception in ASGI application
+  + Exception Group Traceback (most recent call last):
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 401, in run_asgi
+  |     result = await app(  # type: ignore[func-returns-value]
+  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+  |     return await self.app(scope, receive, send)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+  |     await super().__call__(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/applications.py", line 113, in __call__
+  |     await self.middleware_stack(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+  |     await self.app(scope, receive, _send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+  |     await self.simple_response(scope, receive, send, request_headers=headers)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+  |     await self.app(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+  |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+  |     await app(scope, receive, sender)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
+  |     await self.middleware_stack(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
+  |     await route.handle(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+  |     await self.app(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+  |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+  |     await app(scope, receive, sender)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 74, in app
+  |     await response(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 268, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 783, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 271, in wrap
+    |     await func()
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 251, in stream_response
+    |     async for data in self.body_iterator:
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/app/routers/emails.py", line 105, in event_generator
+    |     days = max(days, strategy.get("days", 7))
+    |                ^^^^
+    | UnboundLocalError: cannot access local variable 'days' where it is not associated with a value
+    +------------------------------------
+2026-02-08 22:24:09 - uvicorn.access - INFO - 127.0.0.1:57329 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:24:09 - uvicorn.access - INFO - 127.0.0.1:57330 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:24:10 - uvicorn.access - INFO - 127.0.0.1:57329 - "GET /api/emails/sync-stream?days=40&force_first=false HTTP/1.1" 200
+2026-02-08 22:24:10 - sse_starlette.sse - DEBUG - chunk: b'event: status\r\ndata: {"status": "connecting", "message": "\\u589e\\u91cf\\u540c\\u6b65\\uff1a\\u68c0\\u67e5\\u6700\\u8fd13\\u5929\\u65b0\\u90ae\\u4ef6..."}\r\n\r\n'
+2026-02-08 22:24:10 - uvicorn.error - ERROR - Exception in ASGI application
+  + Exception Group Traceback (most recent call last):
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 401, in run_asgi
+  |     result = await app(  # type: ignore[func-returns-value]
+  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+  |     return await self.app(scope, receive, send)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+  |     await super().__call__(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/applications.py", line 113, in __call__
+  |     await self.middleware_stack(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+  |     await self.app(scope, receive, _send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+  |     await self.simple_response(scope, receive, send, request_headers=headers)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+  |     await self.app(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+  |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+  |     await app(scope, receive, sender)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
+  |     await self.middleware_stack(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
+  |     await route.handle(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+  |     await self.app(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+  |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+  |     await app(scope, receive, sender)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 74, in app
+  |     await response(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 268, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 783, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 271, in wrap
+    |     await func()
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 251, in stream_response
+    |     async for data in self.body_iterator:
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/app/routers/emails.py", line 105, in event_generator
+    |     days = max(days, strategy.get("days", 7))
+    |                ^^^^
+    | UnboundLocalError: cannot access local variable 'days' where it is not associated with a value
+    +------------------------------------
+2026-02-08 22:24:10 - uvicorn.error - ERROR - Exception in ASGI application
+  + Exception Group Traceback (most recent call last):
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 401, in run_asgi
+  |     result = await app(  # type: ignore[func-returns-value]
+  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+  |     return await self.app(scope, receive, send)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+  |     await super().__call__(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/applications.py", line 113, in __call__
+  |     await self.middleware_stack(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+  |     await self.app(scope, receive, _send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+  |     await self.simple_response(scope, receive, send, request_headers=headers)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+  |     await self.app(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+  |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+  |     await app(scope, receive, sender)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
+  |     await self.middleware_stack(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
+  |     await route.handle(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+  |     await self.app(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+  |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+  |     await app(scope, receive, sender)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 74, in app
+  |     await response(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 268, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 783, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 271, in wrap
+    |     await func()
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 251, in stream_response
+    |     async for data in self.body_iterator:
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/app/routers/emails.py", line 105, in event_generator
+    |     days = max(days, strategy.get("days", 7))
+    |                ^^^^
+    | UnboundLocalError: cannot access local variable 'days' where it is not associated with a value
+    +------------------------------------
+2026-02-08 22:24:48 - uvicorn.access - INFO - 127.0.0.1:57350 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:24:48 - uvicorn.access - INFO - 127.0.0.1:57351 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:24:58 - uvicorn.access - INFO - 127.0.0.1:57360 - "GET /api/emails/sync-stream?days=40&force_first=true HTTP/1.1" 200
+2026-02-08 22:24:58 - sse_starlette.sse - DEBUG - chunk: b'event: status\r\ndata: {"status": "connecting", "message": "\\u5168\\u91cf\\u540c\\u6b65\\uff1a\\u5c06\\u83b7\\u53d6\\u6700\\u8fd17\\u5929\\u90ae\\u4ef6..."}\r\n\r\n'
+2026-02-08 22:24:58 - uvicorn.error - ERROR - Exception in ASGI application
+  + Exception Group Traceback (most recent call last):
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 401, in run_asgi
+  |     result = await app(  # type: ignore[func-returns-value]
+  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+  |     return await self.app(scope, receive, send)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+  |     await super().__call__(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/applications.py", line 113, in __call__
+  |     await self.middleware_stack(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+  |     await self.app(scope, receive, _send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+  |     await self.simple_response(scope, receive, send, request_headers=headers)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+  |     await self.app(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+  |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+  |     await app(scope, receive, sender)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
+  |     await self.middleware_stack(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
+  |     await route.handle(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+  |     await self.app(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+  |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+  |     await app(scope, receive, sender)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 74, in app
+  |     await response(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 268, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 783, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 271, in wrap
+    |     await func()
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 251, in stream_response
+    |     async for data in self.body_iterator:
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/app/routers/emails.py", line 105, in event_generator
+    |     days = max(days, strategy.get("days", 7))
+    |                ^^^^
+    | UnboundLocalError: cannot access local variable 'days' where it is not associated with a value
+    +------------------------------------
+2026-02-08 22:24:58 - uvicorn.error - ERROR - Exception in ASGI application
+  + Exception Group Traceback (most recent call last):
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 401, in run_asgi
+  |     result = await app(  # type: ignore[func-returns-value]
+  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+  |     return await self.app(scope, receive, send)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+  |     await super().__call__(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/applications.py", line 113, in __call__
+  |     await self.middleware_stack(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+  |     await self.app(scope, receive, _send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+  |     await self.simple_response(scope, receive, send, request_headers=headers)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+  |     await self.app(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+  |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+  |     await app(scope, receive, sender)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
+  |     await self.middleware_stack(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
+  |     await route.handle(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+  |     await self.app(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+  |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+  |     raise exc
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+  |     await app(scope, receive, sender)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/starlette/routing.py", line 74, in app
+  |     await response(scope, receive, send)
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 268, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 783, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 271, in wrap
+    |     await func()
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/sse_starlette/sse.py", line 251, in stream_response
+    |     async for data in self.body_iterator:
+    |   File "/Users/a1/project/Email-Manager-for-student/backend/app/routers/emails.py", line 105, in event_generator
+    |     days = max(days, strategy.get("days", 7))
+    |                ^^^^
+    | UnboundLocalError: cannot access local variable 'days' where it is not associated with a value
+    +------------------------------------
+2026-02-08 22:24:59 - uvicorn.access - INFO - 127.0.0.1:57363 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:24:59 - uvicorn.access - INFO - 127.0.0.1:57364 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:25:59 - uvicorn.error - INFO - Shutting down
+2026-02-08 22:25:59 - uvicorn.error - INFO - Shutting down
+2026-02-08 22:25:59 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-02-08 22:25:59 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-02-08 22:25:59 - uvicorn.error - INFO - Application shutdown complete.
+2026-02-08 22:25:59 - uvicorn.error - INFO - Application shutdown complete.
+2026-02-08 22:25:59 - uvicorn.error - INFO - Finished server process [91863]
+2026-02-08 22:25:59 - uvicorn.error - INFO - Finished server process [91863]
+2026-02-08 22:26:42 - root - INFO - Logging initialized. Log file: /Users/a1/project/Email-Manager-for-student/backend/logs/email_manager.log
+2026-02-08 22:26:42 - uvicorn.error - INFO - Started server process [93042]
+2026-02-08 22:26:42 - uvicorn.error - INFO - Started server process [93042]
+2026-02-08 22:26:42 - uvicorn.error - INFO - Waiting for application startup.
+2026-02-08 22:26:42 - uvicorn.error - INFO - Waiting for application startup.
+2026-02-08 22:26:42 - uvicorn.error - INFO - Application startup complete.
+2026-02-08 22:26:42 - uvicorn.error - INFO - Application startup complete.
+2026-02-08 22:27:05 - uvicorn.access - INFO - 127.0.0.1:57474 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:27:05 - uvicorn.access - INFO - 127.0.0.1:57476 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:27:05 - uvicorn.access - INFO - 127.0.0.1:57479 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:27:05 - uvicorn.access - INFO - 127.0.0.1:57480 - "GET /api/settings HTTP/1.1" 200
+2026-02-08 22:27:05 - uvicorn.access - INFO - 127.0.0.1:57479 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:27:05 - uvicorn.access - INFO - 127.0.0.1:57485 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:27:05 - uvicorn.access - INFO - 127.0.0.1:57476 - "GET /api/settings HTTP/1.1" 200
+2026-02-08 22:27:05 - uvicorn.access - INFO - 127.0.0.1:57487 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:27:05 - uvicorn.access - INFO - 127.0.0.1:57485 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:27:05 - uvicorn.access - INFO - 127.0.0.1:57474 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:27:07 - uvicorn.access - INFO - 127.0.0.1:57487 - "GET /api/emails/sync-stream?days=40&force_first=false HTTP/1.1" 200
+2026-02-08 22:27:07 - sse_starlette.sse - DEBUG - chunk: b'event: status\r\ndata: {"status": "connecting", "message": "\\u589e\\u91cf\\u540c\\u6b65\\uff1a\\u68c0\\u67e5\\u6700\\u8fd13\\u5929\\u65b0\\u90ae\\u4ef6..."}\r\n\r\n'
+2026-02-08 22:27:09 - app.services.imap_service - ERROR - IMAP connection failed: Response status "OK" expected, but "NO" received. Data: [b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)']
+2026-02-08 22:27:09 - sse_starlette.sse - DEBUG - chunk: b'event: error\r\ndata: {"message": "IMAP\\u8fde\\u63a5\\u5931\\u8d25"}\r\n\r\n'
+2026-02-08 22:27:09 - sse_starlette.sse - DEBUG - Got event: http.disconnect. Stop streaming.
+2026-02-08 22:27:10 - uvicorn.access - INFO - 127.0.0.1:57487 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:27:10 - uvicorn.access - INFO - 127.0.0.1:57489 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:27:15 - uvicorn.access - INFO - 127.0.0.1:57487 - "PUT /api/settings HTTP/1.1" 200
+2026-02-08 22:27:19 - uvicorn.access - INFO - 127.0.0.1:57487 - "GET /api/emails/sync-stream?days=40&force_first=true HTTP/1.1" 200
+2026-02-08 22:27:19 - sse_starlette.sse - DEBUG - chunk: b'event: status\r\ndata: {"status": "connecting", "message": "\\u5168\\u91cf\\u540c\\u6b65\\uff1a\\u5c06\\u83b7\\u53d6\\u6700\\u8fd17\\u5929\\u90ae\\u4ef6..."}\r\n\r\n'
+2026-02-08 22:27:31 - sse_starlette.sse - DEBUG - chunk: b'event: status\r\ndata: {"status": "fetching", "message": "\\u6b63\\u5728\\u83b7\\u53d6\\u90ae\\u4ef6\\u5217\\u8868..."}\r\n\r\n'
+2026-02-08 22:27:41 - app.routers.emails - INFO - [SYNC DEBUG] fetch_uids returned 103 UIDs for 40 days
+2026-02-08 22:27:41 - app.routers.emails - INFO - [SYNC DEBUG] 68 emails already exist, 35 are new
+2026-02-08 22:27:41 - app.routers.emails - INFO - SSE: 103 total emails, 35 new emails to process (sync_type=first_sync)
+2026-02-08 22:27:41 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 0, "synced": 0, "processed": 0, "message": "\\u53d1\\u73b0 35 \\u5c01\\u65b0\\u90ae\\u4ef6\\u5f85\\u5904\\u7406"}\r\n\r\n'
+2026-02-08 22:29:52 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2026-02-08 22:29:52 - httpx - DEBUG - load_verify_locations cafile='/Users/a1/project/Email-Manager-for-student/backend/venv/lib/python3.12/site-packages/certifi/cacert.pem'
+2026-02-08 22:29:52 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-02-08 22:29:52 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x110641520>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 1, "synced": 1, "processed": 1, "message": "\\u5df2\\u5904\\u7406: \\u300c\\u4e16\\u5916\\u7bc9\\u8de1\\u2500\\u2500\\u6587\\u7269\\u9928\\u6642\\u7a7a\\u6f2b\\u904a\\u300d  Architecture "}\r\n\r\n'
+2026-02-08 22:29:52 - sse_starlette.sse - DEBUG - ping: b': ping - 2026-02-08 14:29:52.721795+00:00\r\n\r\n'
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 2, "synced": 2, "processed": 2, "message": "\\u5df2\\u5904\\u7406: Welcome to join the VR Experim"}\r\n\r\n'
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 3, "synced": 3, "processed": 3, "message": "\\u5df2\\u5904\\u7406: [Last Call] (Venue Changed) \\u270d\\ufe0f"}\r\n\r\n'
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 4, "synced": 4, "processed": 4, "message": "\\u5df2\\u5904\\u7406: \\u6821\\u7267\\u5ba4\\u63a8\\u4ecb\\uff1a\\u6691\\u671f\\u5be6\\u7fd2\\uff08\\u5b97\\u6559\\u8207\\u670d\\u52d9\\uff09\\u53ca \\u67ec\\u57d4\\u5be8\\u5b97\\u6559\\u8003\\u5bdf\\u53ca\\u670d\\u52d9\\u5718"}\r\n\r\n'
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 5, "synced": 5, "processed": 5, "message": "\\u5df2\\u5904\\u7406: \\u3010\\u5d07\\u5531\\u4e8c\\u516d\\u3011\\u53c3\\u8cfd\\u8005\\u958b\\u653e\\u5831\\u540d | Application fo"}\r\n\r\n'
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 6, "synced": 6, "processed": 6, "message": "\\u5df2\\u5904\\u7406: E-News of the Research Office "}\r\n\r\n'
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 7, "synced": 7, "processed": 7, "message": "\\u5df2\\u5904\\u7406: [Alert] \\u63d0\\u9632\\u7535\\u8bdd\\u9a97\\u6848! Beware of Tele"}\r\n\r\n'
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 8, "synced": 8, "processed": 8, "message": "\\u5df2\\u5904\\u7406: \\u7da0\\u8272\\u53ca\\u53ef\\u6301\\u7e8c\\u8ad6\\u6587\\u734e2025/26  Green and Su"}\r\n\r\n'
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 9, "synced": 9, "processed": 9, "message": "\\u5df2\\u5904\\u7406: \\u7da0\\u8272\\u53ca\\u53ef\\u6301\\u7e8c\\u8ad6\\u6587\\u734e2025/26  Green and Su"}\r\n\r\n'
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:29:52 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:29:52 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:29:52 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:29:52 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 10, "synced": 10, "processed": 10, "message": "\\u5df2\\u5904\\u7406: \\u7da0\\u8272\\u53ca\\u53ef\\u6301\\u7e8c\\u8ad6\\u6587\\u734e2025/26  Green and Su"}\r\n\r\n'
+2026-02-08 22:32:04 - httpcore.connection - DEBUG - close.started
+2026-02-08 22:32:04 - httpcore.connection - DEBUG - close.complete
+2026-02-08 22:32:04 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-02-08 22:32:04 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1144f6060>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:04 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:04 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:04 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:04 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:04 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:04 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:04 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 11, "synced": 11, "processed": 11, "message": "\\u5df2\\u5904\\u7406: Daily Notifications"}\r\n\r\n'
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:04 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:04 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:04 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:04 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:04 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:04 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:04 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 12, "synced": 12, "processed": 12, "message": "\\u5df2\\u5904\\u7406: 2026 Summer Internship Program"}\r\n\r\n'
+2026-02-08 22:32:04 - sse_starlette.sse - DEBUG - ping: b': ping - 2026-02-08 14:32:04.961598+00:00\r\n\r\n'
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:04 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:04 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:04 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:04 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:04 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 13, "synced": 13, "processed": 13, "message": "\\u5df2\\u5904\\u7406: Job openings & career events ("}\r\n\r\n'
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:04 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:04 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:04 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:04 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:04 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 14, "synced": 14, "processed": 14, "message": "\\u5df2\\u5904\\u7406: English Table (10 Feb) | \\u82f1\\u8a9e\\u684c ("}\r\n\r\n'
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:04 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:04 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:04 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:04 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:04 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:04 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 15, "synced": 15, "processed": 15, "message": "\\u5df2\\u5904\\u7406: Promotion of Be Friend with AI"}\r\n\r\n'
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:05 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:05 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:05 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:05 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:05 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 16, "synced": 16, "processed": 16, "message": "\\u5df2\\u5904\\u7406: 2025-26 \\u5c71\\u57ce\\u5f71\\u9662 \\u2014\\u20142\\u6708\\u653e\\u6620\\ufe55\\u6bdb\\u5bb6 Theatre"}\r\n\r\n'
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:05 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:05 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:05 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:05 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:05 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:05 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:05 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 17, "synced": 17, "processed": 17, "message": "\\u5df2\\u5904\\u7406: 2025-26 \\u5c71\\u57ce\\u5f71\\u9662 \\u2014\\u20142\\u6708\\u653e\\u6620\\ufe55\\u6bdb\\u5bb6 Theatre"}\r\n\r\n'
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:05 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:05 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:05 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:05 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:05 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 18, "synced": 18, "processed": 18, "message": "\\u5df2\\u5904\\u7406: 2025-26 \\u5c71\\u57ce\\u5f71\\u9662 \\u2014\\u20142\\u6708\\u653e\\u6620\\ufe55\\u6bdb\\u5bb6 Theatre"}\r\n\r\n'
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:05 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:05 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:05 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:05 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:05 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:05 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:05 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 19, "synced": 19, "processed": 19, "message": "\\u5df2\\u5904\\u7406: Professor Prasanna Purushottam"}\r\n\r\n'
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:05 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:05 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:05 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:05 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:32:05 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:32:05 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:32:05 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:32:05 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 20, "synced": 20, "processed": 20, "message": "\\u5df2\\u5904\\u7406: Daily Notifications"}\r\n\r\n'
+2026-02-08 22:32:05 - uvicorn.access - INFO - 127.0.0.1:57665 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:33:58 - httpcore.connection - DEBUG - close.started
+2026-02-08 22:33:58 - httpcore.connection - DEBUG - close.complete
+2026-02-08 22:33:58 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-02-08 22:33:58 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x114510560>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:33:58 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:33:58 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:33:58 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:33:58 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:33:58 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:33:58 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:33:58 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 21, "synced": 21, "processed": 21, "message": "\\u5df2\\u5904\\u7406: \\u3010University YMCA\\u3011\\u6eff\\u300c\\u5e03\\u300d\\u6b61\\u6a02 - \\u62fc\\u8cbc\\u5e03\\u71c8"}\r\n\r\n'
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:33:58 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:33:58 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:33:58 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:33:58 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:33:58 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:33:58 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:33:58 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 22, "synced": 22, "processed": 22, "message": "\\u5df2\\u5904\\u7406: Multicultural Psychological Su"}\r\n\r\n'
+2026-02-08 22:33:58 - sse_starlette.sse - DEBUG - ping: b': ping - 2026-02-08 14:33:58.364181+00:00\r\n\r\n'
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:33:58 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:33:58 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:33:58 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:33:58 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:33:58 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 23, "synced": 23, "processed": 23, "message": "\\u5df2\\u5904\\u7406: Services Maintenance of MyCUHK"}\r\n\r\n'
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:33:58 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:33:58 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:33:58 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:33:58 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:33:58 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 24, "synced": 24, "processed": 24, "message": "\\u5df2\\u5904\\u7406: [Sign Up Now!] Lion Dance Work"}\r\n\r\n'
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:33:58 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:33:58 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:33:58 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 25, "synced": 25, "processed": 25, "message": "\\u5df2\\u5904\\u7406: [Final Call to Register] Alumn"}\r\n\r\n'
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:33:58 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:33:58 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:33:58 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:33:58 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:33:58 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 26, "synced": 26, "processed": 26, "message": "\\u5df2\\u5904\\u7406: Alumni Mentor Sharing \\u2013 Charti"}\r\n\r\n'
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:33:58 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:33:58 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:33:58 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:33:58 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:33:58 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 27, "synced": 27, "processed": 27, "message": "\\u5df2\\u5904\\u7406: [AAA\\u7cbe\\u9078\\u6d3b\\u52d5] \\u9818\\u822a\\u8005\\u8ad6\\u58c7\\ud83c\\udf99\\ufe0f\\u5e73\\u51e1\\u8d77\\u6b65\\uff0c\\u975e\\u51e1\\u9ad8\\u5ea6\\uff1a\\u5f9e\\u57fa\\u5c64"}\r\n\r\n'
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:33:58 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:33:58 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:33:58 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:33:58 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:33:58 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 28, "synced": 28, "processed": 28, "message": "\\u5df2\\u5904\\u7406: \\u9752\\u5e74\\u9818\\u8896\\u734e\\u5448\\u737b\\uff1a\\u4e2d\\u5927\\u8207\\u8857\\u53cb\\u6cd5\\u5f0f\\u4e4b\\u591c | Young Lead"}\r\n\r\n'
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:33:58 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:33:58 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:33:58 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 29, "synced": 29, "processed": 29, "message": "\\u5df2\\u5904\\u7406: [Final Call!] Career Guidance "}\r\n\r\n'
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:33:58 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:33:58 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:33:58 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:33:58 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:33:58 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:33:58 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:33:58 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:33:58 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 30, "synced": 30, "processed": 30, "message": "\\u5df2\\u5904\\u7406: 2025R2 Business Communication "}\r\n\r\n'
+2026-02-08 22:34:39 - httpcore.connection - DEBUG - close.started
+2026-02-08 22:34:39 - httpcore.connection - DEBUG - close.complete
+2026-02-08 22:34:39 - httpcore.connection - DEBUG - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-02-08 22:34:39 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x110ecaed0>
+2026-02-08 22:34:39 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:34:39 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:34:39 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:34:39 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:34:39 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:34:39 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:34:39 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:34:40 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:34:40 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:34:40 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:34:40 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 31, "synced": 31, "processed": 31, "message": "\\u5df2\\u5904\\u7406: \\u8857\\u61b6\\u986f\\u5f71\\uff1a\\u684c\\u904a\\u8a2d\\u8a08 \\u00d7 \\u9577\\u8005\\u8a8d\\u77e5\\u4fc3\\u9032\\u5de5\\u4f5c\\u574a Hong Kon"}\r\n\r\n'
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:34:40 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:34:40 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:34:40 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:34:40 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:34:40 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:34:40 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:34:40 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 32, "synced": 32, "processed": 32, "message": "\\u5df2\\u5904\\u7406: \\u3010\\u6700\\u5f8c\\u5169\\u5929\\uff01\\u3011\\u5d07\\u57fa\\u901a\\u8b58\\u9ad8\\u5e74\\u7d1a\\u79d1\\u76ee\\uff082026/27\\u4e0a\\u5b78\\u671f\\uff09\\u6f2b\\u6b65"}\r\n\r\n'
+2026-02-08 22:34:40 - sse_starlette.sse - DEBUG - ping: b': ping - 2026-02-08 14:34:40.030611+00:00\r\n\r\n'
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:34:40 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:34:40 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:34:40 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:34:40 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:34:40 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 33, "synced": 33, "processed": 33, "message": "\\u5df2\\u5904\\u7406: HSK Chinese Proficiency Test W"}\r\n\r\n'
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:34:40 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:34:40 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:34:40 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:34:40 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:34:40 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 34, "synced": 34, "processed": 34, "message": "\\u5df2\\u5904\\u7406: YIC\\u98db\\u8d8a\\u7063\\u5340\\u9ad4\\u9a57\\u8a08\\u5283\\uff1a\\u77ad\\u89e3\\u5de5\\u696d\\u5275\\u65b0\\u52d5\\u5411\\u53ca\\u5927\\u7063\\u5340\\u767c\\u5c55\\u6f5c\\u529b"}\r\n\r\n'
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:34:40 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:34:40 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 08 Feb 2026 14:34:40 GMT'), (b'Content-Length', b'40')])
+2026-02-08 22:34:40 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - response_closed.started
+2026-02-08 22:34:40 - httpcore.http11 - DEBUG - response_closed.complete
+2026-02-08 22:34:40 - sse_starlette.sse - DEBUG - chunk: b'event: progress\r\ndata: {"total": 35, "current": 35, "synced": 35, "processed": 35, "message": "\\u5df2\\u5904\\u7406: Career Guidance Programme - Fo"}\r\n\r\n'
+2026-02-08 22:34:40 - sse_starlette.sse - DEBUG - chunk: b'event: complete\r\ndata: {"success": true, "message": "\\u540c\\u6b65\\u5b8c\\u6210\\uff0c\\u65b0\\u589e 35 \\u5c01\\u90ae\\u4ef6", "emails_synced": 35, "emails_processed": 35}\r\n\r\n'
+2026-02-08 22:34:41 - sse_starlette.sse - DEBUG - Got event: http.disconnect. Stop streaming.
+2026-02-08 22:36:28 - uvicorn.access - INFO - 127.0.0.1:57822 - "OPTIONS /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:36:28 - uvicorn.access - INFO - 127.0.0.1:57823 - "OPTIONS /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:36:28 - uvicorn.access - INFO - 127.0.0.1:57822 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:36:28 - uvicorn.access - INFO - 127.0.0.1:57823 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:37:00 - uvicorn.access - INFO - 127.0.0.1:57849 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:37:00 - uvicorn.access - INFO - 127.0.0.1:57850 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:37:00 - uvicorn.access - INFO - 127.0.0.1:57853 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:37:00 - uvicorn.access - INFO - 127.0.0.1:57854 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:37:00 - uvicorn.access - INFO - 127.0.0.1:57857 - "OPTIONS /api/settings HTTP/1.1" 200
+2026-02-08 22:37:00 - uvicorn.access - INFO - 127.0.0.1:57854 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:37:00 - uvicorn.access - INFO - 127.0.0.1:57862 - "OPTIONS /api/settings HTTP/1.1" 200
+2026-02-08 22:37:00 - uvicorn.access - INFO - 127.0.0.1:57857 - "GET /api/settings HTTP/1.1" 200
+2026-02-08 22:37:00 - uvicorn.access - INFO - 127.0.0.1:57864 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:37:00 - uvicorn.access - INFO - 127.0.0.1:57853 - "GET /api/settings HTTP/1.1" 200
+2026-02-08 22:37:00 - uvicorn.access - INFO - 127.0.0.1:57850 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:37:00 - uvicorn.access - INFO - 127.0.0.1:57849 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:38:32 - uvicorn.access - INFO - 127.0.0.1:57927 - "OPTIONS /api/emails/493/read HTTP/1.1" 200
+2026-02-08 22:38:32 - uvicorn.access - INFO - 127.0.0.1:57927 - "PUT /api/emails/493/read HTTP/1.1" 200
+2026-02-08 22:38:38 - uvicorn.access - INFO - 127.0.0.1:57932 - "OPTIONS /api/emails/474/read HTTP/1.1" 200
+2026-02-08 22:38:38 - uvicorn.access - INFO - 127.0.0.1:57932 - "PUT /api/emails/474/read HTTP/1.1" 200
+2026-02-08 22:40:10 - uvicorn.access - INFO - 127.0.0.1:57993 - "GET /api/emails/sync-stream?days=40&force_first=false HTTP/1.1" 200
+2026-02-08 22:40:10 - sse_starlette.sse - DEBUG - chunk: b'event: status\r\ndata: {"status": "connecting", "message": "\\u589e\\u91cf\\u540c\\u6b65\\uff1a\\u68c0\\u67e5\\u6700\\u8fd13\\u5929\\u65b0\\u90ae\\u4ef6..."}\r\n\r\n'
+2026-02-08 22:40:11 - app.services.imap_service - ERROR - IMAP connection failed: Response status "OK" expected, but "NO" received. Data: [b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)']
+2026-02-08 22:40:11 - sse_starlette.sse - DEBUG - chunk: b'event: error\r\ndata: {"message": "IMAP\\u8fde\\u63a5\\u5931\\u8d25"}\r\n\r\n'
+2026-02-08 22:40:11 - sse_starlette.sse - DEBUG - Got event: http.disconnect. Stop streaming.
+2026-02-08 22:40:14 - uvicorn.access - INFO - 127.0.0.1:57993 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:40:14 - uvicorn.access - INFO - 127.0.0.1:57999 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:42:00 - uvicorn.access - INFO - 127.0.0.1:58094 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:42:29 - uvicorn.error - INFO - Shutting down
+2026-02-08 22:42:29 - uvicorn.error - INFO - Shutting down
+2026-02-08 22:42:29 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-02-08 22:42:29 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-02-08 22:42:29 - uvicorn.error - INFO - Application shutdown complete.
+2026-02-08 22:42:29 - uvicorn.error - INFO - Application shutdown complete.
+2026-02-08 22:42:29 - uvicorn.error - INFO - Finished server process [93042]
+2026-02-08 22:42:29 - uvicorn.error - INFO - Finished server process [93042]
+2026-02-08 22:42:29 - root - INFO - Logging initialized. Log file: /Users/a1/project/Email-Manager-for-student/backend/logs/email_manager.log
+2026-02-08 22:42:29 - uvicorn.error - INFO - Started server process [93403]
+2026-02-08 22:42:29 - uvicorn.error - INFO - Started server process [93403]
+2026-02-08 22:42:29 - uvicorn.error - INFO - Waiting for application startup.
+2026-02-08 22:42:29 - uvicorn.error - INFO - Waiting for application startup.
+2026-02-08 22:42:29 - uvicorn.error - INFO - Application startup complete.
+2026-02-08 22:42:29 - uvicorn.error - INFO - Application startup complete.
+2026-02-08 22:43:07 - uvicorn.error - INFO - Shutting down
+2026-02-08 22:43:07 - uvicorn.error - INFO - Shutting down
+2026-02-08 22:43:07 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-02-08 22:43:07 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-02-08 22:43:07 - uvicorn.error - INFO - Application shutdown complete.
+2026-02-08 22:43:07 - uvicorn.error - INFO - Application shutdown complete.
+2026-02-08 22:43:07 - uvicorn.error - INFO - Finished server process [93403]
+2026-02-08 22:43:07 - uvicorn.error - INFO - Finished server process [93403]
+2026-02-08 22:43:23 - root - INFO - Logging initialized. Log file: /Users/a1/project/Email-Manager-for-student/backend/logs/email_manager.log
+2026-02-08 22:43:23 - uvicorn.error - INFO - Started server process [94214]
+2026-02-08 22:43:23 - uvicorn.error - INFO - Started server process [94214]
+2026-02-08 22:43:23 - uvicorn.error - INFO - Waiting for application startup.
+2026-02-08 22:43:23 - uvicorn.error - INFO - Waiting for application startup.
+2026-02-08 22:43:23 - uvicorn.error - INFO - Application startup complete.
+2026-02-08 22:43:23 - uvicorn.error - INFO - Application startup complete.
+2026-02-08 22:44:35 - uvicorn.access - INFO - 127.0.0.1:58222 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:44:35 - uvicorn.access - INFO - 127.0.0.1:58229 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:44:35 - uvicorn.access - INFO - 127.0.0.1:58230 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:44:35 - uvicorn.access - INFO - 127.0.0.1:58232 - "GET /api/settings HTTP/1.1" 200
+2026-02-08 22:44:35 - uvicorn.access - INFO - 127.0.0.1:58230 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:44:35 - uvicorn.access - INFO - 127.0.0.1:58233 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:44:35 - uvicorn.access - INFO - 127.0.0.1:58235 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:44:35 - uvicorn.access - INFO - 127.0.0.1:58237 - "GET /api/settings HTTP/1.1" 200
+2026-02-08 22:44:35 - uvicorn.access - INFO - 127.0.0.1:58233 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:44:35 - uvicorn.access - INFO - 127.0.0.1:58222 - "GET /api/stats/action-cards HTTP/1.1" 200
+2026-02-08 22:44:37 - uvicorn.access - INFO - 127.0.0.1:58235 - "GET /api/emails/sync-stream?days=40&force_first=false HTTP/1.1" 200
+2026-02-08 22:44:37 - sse_starlette.sse - DEBUG - chunk: b'event: status\r\ndata: {"status": "connecting", "message": "\\u589e\\u91cf\\u540c\\u6b65\\uff1a\\u68c0\\u67e5\\u6700\\u8fd13\\u5929\\u65b0\\u90ae\\u4ef6..."}\r\n\r\n'
+2026-02-08 22:44:39 - app.services.imap_service - ERROR - IMAP connection failed: Response status "OK" expected, but "NO" received. Data: [b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)']
+2026-02-08 22:44:39 - sse_starlette.sse - DEBUG - chunk: b'event: error\r\ndata: {"message": "IMAP\\u8fde\\u63a5\\u5931\\u8d25"}\r\n\r\n'
+2026-02-08 22:44:39 - sse_starlette.sse - DEBUG - Got event: http.disconnect. Stop streaming.
+2026-02-08 22:44:40 - uvicorn.access - INFO - 127.0.0.1:58235 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:44:40 - uvicorn.access - INFO - 127.0.0.1:58237 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:44:44 - uvicorn.access - INFO - 127.0.0.1:58235 - "OPTIONS /api/settings/test-imap HTTP/1.1" 200
+2026-02-08 22:44:58 - uvicorn.access - INFO - 127.0.0.1:58235 - "POST /api/settings/test-imap HTTP/1.1" 200
+2026-02-08 22:44:58 - uvicorn.access - INFO - 127.0.0.1:58237 - "GET /api/emails/sync-stream?days=40&force_first=true HTTP/1.1" 200
+2026-02-08 22:44:58 - sse_starlette.sse - DEBUG - chunk: b'event: status\r\ndata: {"status": "connecting", "message": "\\u5168\\u91cf\\u540c\\u6b65\\uff1a\\u5c06\\u83b7\\u53d6\\u6700\\u8fd17\\u5929\\u90ae\\u4ef6..."}\r\n\r\n'
+2026-02-08 22:45:00 - app.services.imap_service - ERROR - IMAP connection failed: Response status "OK" expected, but "NO" received. Data: [b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)']
+2026-02-08 22:45:00 - sse_starlette.sse - DEBUG - chunk: b'event: error\r\ndata: {"message": "IMAP\\u8fde\\u63a5\\u5931\\u8d25"}\r\n\r\n'
+2026-02-08 22:45:00 - sse_starlette.sse - DEBUG - Got event: http.disconnect. Stop streaming.
+2026-02-08 22:45:01 - uvicorn.access - INFO - 127.0.0.1:58237 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:45:01 - uvicorn.access - INFO - 127.0.0.1:58235 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:45:06 - uvicorn.access - INFO - 127.0.0.1:58257 - "PUT /api/settings HTTP/1.1" 200
+2026-02-08 22:45:08 - uvicorn.access - INFO - 127.0.0.1:58257 - "GET /api/emails/sync-stream?days=40&force_first=false HTTP/1.1" 200
+2026-02-08 22:45:08 - sse_starlette.sse - DEBUG - chunk: b'event: status\r\ndata: {"status": "connecting", "message": "\\u589e\\u91cf\\u540c\\u6b65\\uff1a\\u68c0\\u67e5\\u6700\\u8fd13\\u5929\\u65b0\\u90ae\\u4ef6..."}\r\n\r\n'
+2026-02-08 22:45:11 - sse_starlette.sse - DEBUG - chunk: b'event: status\r\ndata: {"status": "fetching", "message": "\\u6b63\\u5728\\u83b7\\u53d6\\u90ae\\u4ef6\\u5217\\u8868..."}\r\n\r\n'
+2026-02-08 22:45:13 - app.routers.emails - INFO - [SYNC DEBUG] fetch_uids returned 103 UIDs for 40 days
+2026-02-08 22:45:13 - app.routers.emails - INFO - [SYNC DEBUG] 103 emails already exist, 0 are new
+2026-02-08 22:45:13 - app.routers.emails - INFO - SSE: 103 total emails, 0 new emails to process (sync_type=incremental_sync)
+2026-02-08 22:45:13 - sse_starlette.sse - DEBUG - chunk: b'event: complete\r\ndata: {"success": true, "message": "\\u6240\\u6709\\u90ae\\u4ef6\\u5df2\\u662f\\u6700\\u65b0", "emails_synced": 0, "emails_processed": 0}\r\n\r\n'
+2026-02-08 22:45:15 - sse_starlette.sse - DEBUG - Got event: http.disconnect. Stop streaming.
+2026-02-08 22:45:20 - uvicorn.access - INFO - 127.0.0.1:58265 - "GET /api/emails?is_archived=false HTTP/1.1" 200
+2026-02-08 22:45:20 - uvicorn.access - INFO - 127.0.0.1:58266 - "GET /api/ddl?days=7 HTTP/1.1" 200
+2026-02-08 22:45:57 - uvicorn.error - INFO - Shutting down
+2026-02-08 22:45:57 - uvicorn.error - INFO - Shutting down
+2026-02-08 22:45:57 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-02-08 22:45:57 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-02-08 22:45:57 - uvicorn.error - INFO - Application shutdown complete.
+2026-02-08 22:45:57 - uvicorn.error - INFO - Application shutdown complete.
+2026-02-08 22:45:57 - uvicorn.error - INFO - Finished server process [94214]
+2026-02-08 22:45:57 - uvicorn.error - INFO - Finished server process [94214]
+2026-02-08 22:45:57 - root - INFO - Logging initialized. Log file: /Users/a1/project/Email-Manager-for-student/backend/logs/email_manager.log
+2026-02-08 22:45:57 - uvicorn.error - INFO - Started server process [94294]
+2026-02-08 22:45:57 - uvicorn.error - INFO - Started server process [94294]
+2026-02-08 22:45:57 - uvicorn.error - INFO - Waiting for application startup.
+2026-02-08 22:45:57 - uvicorn.error - INFO - Waiting for application startup.
+2026-02-08 22:45:57 - uvicorn.error - INFO - Application startup complete.
+2026-02-08 22:45:57 - uvicorn.error - INFO - Application startup complete.
+2026-02-08 22:46:12 - uvicorn.error - INFO - Shutting down
+2026-02-08 22:46:12 - uvicorn.error - INFO - Shutting down
+2026-02-08 22:46:12 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-02-08 22:46:12 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-02-08 22:46:12 - uvicorn.error - INFO - Application shutdown complete.
+2026-02-08 22:46:12 - uvicorn.error - INFO - Application shutdown complete.
+2026-02-08 22:46:12 - uvicorn.error - INFO - Finished server process [94294]
+2026-02-08 22:46:12 - uvicorn.error - INFO - Finished server process [94294]

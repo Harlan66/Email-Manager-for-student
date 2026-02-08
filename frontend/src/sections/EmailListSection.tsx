@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import { Archive, Trash2, Clock, Paperclip } from 'lucide-react';
 import type { Email, FilterType } from '@/types';
 import { URGENCY_COLORS } from '@/types';
+import { useTheme } from '@/contexts/ThemeContext';
 
 interface EmailListSectionProps {
   emails: Email[];
@@ -18,6 +19,7 @@ const FILTER_OPTIONS: { value: FilterType; label: string; tag: string }[] = [
 ];
 
 export function EmailListSection({ emails, onEmailClick, onArchive, onDelete }: EmailListSectionProps) {
+  const { t } = useTheme();
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
   const [activeTags, setActiveTags] = useState<string[]>([]);
 
@@ -95,8 +97,8 @@ export function EmailListSection({ emails, onEmailClick, onArchive, onDelete }: 
             </svg>
           </div>
           <div>
-            <h3 className="text-base font-semibold" style={{ color: '#2A2A2A' }}>邮件列表</h3>
-            <p className="text-xs" style={{ color: '#9B9B9B' }}>共 {emails.length} 封</p>
+            <h3 className="text-base font-semibold" style={{ color: '#2A2A2A' }}>{t('email_list.title')}</h3>
+            <p className="text-xs" style={{ color: '#9B9B9B' }}>{t('email_list.count').replace('{count}', String(emails.length))}</p>
           </div>
         </div>
 
@@ -109,7 +111,7 @@ export function EmailListSection({ emails, onEmailClick, onArchive, onDelete }: 
               className={`filter-pill ${filter.value} ${activeFilter === filter.value ? 'active' : ''}`}
             >
               {filter.tag && <span className="mr-1">{filter.tag}</span>}
-              {filter.label}
+              {t(`filter.${filter.value}`)}
             </button>
           ))}
         </div>
@@ -118,14 +120,14 @@ export function EmailListSection({ emails, onEmailClick, onArchive, onDelete }: 
       {/* Tag筛选 */}
       {allTags.length > 0 && (
         <div className="flex items-center gap-2 flex-wrap">
-          <span className="text-xs" style={{ color: '#9B9B9B' }}>标签:</span>
+          <span className="text-xs" style={{ color: '#9B9B9B' }}>{t('email_list.tags')}</span>
           {allTags.map((tag) => (
             <button
               key={tag}
               onClick={() => toggleTag(tag)}
               className={`px-2 py-1 text-xs rounded-full transition-all ${activeTags.includes(tag)
-                  ? 'bg-indigo-100 text-indigo-700 border border-indigo-300'
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                ? 'bg-indigo-100 text-indigo-700 border border-indigo-300'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
             >
               {tag}
@@ -136,7 +138,7 @@ export function EmailListSection({ emails, onEmailClick, onArchive, onDelete }: 
               onClick={() => setActiveTags([])}
               className="px-2 py-1 text-xs rounded-full bg-red-50 text-red-600 hover:bg-red-100"
             >
-              清除
+              {t('email_list.clear')}
             </button>
           )}
         </div>
@@ -165,10 +167,17 @@ export function EmailListSection({ emails, onEmailClick, onArchive, onDelete }: 
                 {email.tag}
               </span>
 
-              {/* 主题 */}
-              <span className={`email-subject text-sm truncate ${email.is_read ? '' : 'font-medium'}`} style={{ color: email.is_read ? '#9B9B9B' : '#2A2A2A' }}>
-                {email.subject}
-              </span>
+              {/* 主题 + 摘要 */}
+              <div className="flex flex-col min-w-0 flex-1">
+                <span className={`email-subject text-sm truncate ${email.is_read ? '' : 'font-medium'}`} style={{ color: email.is_read ? '#9B9B9B' : '#2A2A2A' }}>
+                  {email.subject}
+                </span>
+                {email.summary && (
+                  <span className="text-xs truncate" style={{ color: '#9B9B9B' }}>
+                    {email.summary}
+                  </span>
+                )}
+              </div>
 
               {/* 附件标识 */}
               {email.has_attachments && (
@@ -241,9 +250,12 @@ export function EmailListSection({ emails, onEmailClick, onArchive, onDelete }: 
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
             </svg>
           </div>
-          <p className="text-sm" style={{ color: '#9B9B9B' }}>暂无邮件</p>
+          </div>
+          <p className="text-sm" style={{ color: '#9B9B9B' }}>{t('email_list.empty')}</p>
         </div>
-      )}
-    </div>
+        </div >
+      )
+}
+    </div >
   );
 }

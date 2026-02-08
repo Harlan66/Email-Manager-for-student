@@ -140,6 +140,17 @@ class AIService:
                     return ""
         return ""
     
+    def _clean_summary(self, summary: str) -> str:
+        """Filter unwanted content from summary."""
+        import re
+        # Remove [cid:...] image references
+        summary = re.sub(r'\[cid:[^\]]+\]', '', summary)
+        # Remove multi-language notices
+        summary = re.sub(r'(?i)\(?\s*please scroll down for the english version\s*\)?', '', summary)
+        # Remove extra whitespace
+        summary = ' '.join(summary.split())
+        return summary.strip()
+    
     def process_email(self, email_data: Dict[str, Any]) -> Email:
         """
         Process an email with AI classification and analysis.
@@ -153,19 +164,11 @@ class AIService:
         subject = email_data.get("subject", "")
         body = email_data.get("body_text", "")
         
-        # Step 1: Privacy scan
+        # Privacy scan (kept for metadata but no longer blocks AI)
         privacy_result = PrivacyService.scan(subject, body)
         
-        # Step 2: Determine processing mode based on privacy level
-        # In LOCAL mode, always process locally (privacy-safe since data never leaves device)
+        # All emails go through AI processing based on mode (privacy scanning disabled)
         if self.mode == AIMode.LOCAL:
-            # Local mode is always privacy-safe
-            email = self._process_local(email_data, privacy_result)
-        elif PrivacyService.should_disable_ai(privacy_result):
-            # Only disable AI for extreme privacy in API/hybrid modes
-            email = self._rule_based_process(email_data, privacy_result)
-        elif PrivacyService.should_use_local(privacy_result):
-            # Force local processing for high privacy in hybrid mode
             email = self._process_local(email_data, privacy_result)
         elif self.mode == AIMode.API:
             email = self._process_api(email_data, privacy_result)
@@ -233,7 +236,7 @@ class AIService:
             deadline=deadline_str,
             has_attachments=email_data.get("has_attachments", False),
             attachment_count=email_data.get("attachment_count", 0),
-            summary="(隐私保护模式，AI摘要已禁用)",
+            summary=email_data.get("subject", "")[:30],
             ai_model="rule_based",
             tags=tags,
             body=email_data.get("body_text", ""),
@@ -571,17 +574,17 @@ class AIService:
         try:
             import ollama
             
-            # Dynamic language for summary output
+            # Dynamic language for summary output - request SHORT summary
             if self.language == "en":
-                prompt = f"""Summarize the following email in 2-3 sentences:
+                prompt = f"""Summarize this email in ONE short phrase (max 8 words):
 
-{text[:1500]}
+{text[:800]}
 
-Summary:"""
+Short summary:"""
             else:
-                prompt = f"""用2-3句话总结以下邮件的关键信息:
+                prompt = f"""用一句话概括邮件核心(最多11个字):
 
-{text[:1500]}
+{text[:800]}
 
 摘要:"""
             
@@ -589,11 +592,17 @@ Summary:"""
                 model=self.local_model,
                 messages=[{"role": "user", "content": prompt}]
             )
-            return response['message']['content'].strip()
+            summary = response['message']['content'].strip()
+            # Limit length: 11 chars for Chinese, 40 for English
+            max_len = 40 if self.language == "en" else 11
+            if len(summary) > max_len:
+                summary = summary[:max_len]
+            return self._clean_summary(summary)
         except Exception as e:
             print(f"Local summarization failed: {e}")
-            # Fallback to simple rule-based summary (first 100 chars)
-            return text[:200] + "..." if len(text) > 200 else text
+            # Fallback: first sentence or first 30 chars
+            first_line = text.split('\n')[0][:30]
+            return first_line if first_line else text[:30]
     
     # === API Model Methods ===
     

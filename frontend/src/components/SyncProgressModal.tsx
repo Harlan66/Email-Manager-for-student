@@ -11,7 +11,7 @@ import {
     DialogDescription,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Loader2, CheckCircle, XCircle, Mail } from 'lucide-react';
+import { Loader2, CheckCircle, XCircle, Mail, X, RefreshCw } from 'lucide-react';
 import { URGENCY_COLORS } from '@/types';
 import { syncEmailsWithProgress } from '@/services/api';
 import type { SyncProgress } from '@/services/api';
@@ -20,11 +20,12 @@ interface SyncProgressModalProps {
     isOpen: boolean;
     onComplete: (result: { success: boolean; message: string; synced: number; processed: number }) => void;
     days?: number;
+    forceFirst?: boolean;
 }
 
 type SyncStatus = 'connecting' | 'fetching' | 'syncing' | 'complete' | 'error';
 
-export function SyncProgressModal({ isOpen, onComplete, days = 90 }: SyncProgressModalProps) {
+export function SyncProgressModal({ isOpen, onComplete, days = 90, forceFirst = false }: SyncProgressModalProps) {
     console.log('[SyncProgressModal] render, isOpen:', isOpen);
     const [status, setStatus] = useState<SyncStatus>('connecting');
     const [message, setMessage] = useState('正在连接邮箱...');
@@ -64,8 +65,8 @@ export function SyncProgressModal({ isOpen, onComplete, days = 90 }: SyncProgres
                 setStatus('error');
                 setMessage(errMsg);
             }
-        });
-    }, [days]);
+        }, forceFirst);
+    }, [days, forceFirst]);
 
     useEffect(() => {
         if (isOpen) {
@@ -75,12 +76,18 @@ export function SyncProgressModal({ isOpen, onComplete, days = 90 }: SyncProgres
     }, [isOpen, doSync]);
 
     const handleClose = () => {
+        syncStarted.current = false;  // Reset so next open can sync again
         onComplete({
             success: status === 'complete',
             message,
             synced: result?.synced ?? 0,
             processed: result?.processed ?? 0,
         });
+    };
+
+    const handleRetry = () => {
+        syncStarted.current = false;
+        doSync();
     };
 
     const getStatusIcon = () => {
@@ -117,6 +124,14 @@ export function SyncProgressModal({ isOpen, onComplete, days = 90 }: SyncProgres
     return (
         <Dialog open={isOpen}>
             <DialogContent className="sm:max-w-md" style={{ backgroundColor: 'var(--ivory-white)' }}>
+                {/* Close button in top-right corner */}
+                <button
+                    onClick={handleClose}
+                    className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none"
+                    aria-label="Close"
+                >
+                    <X className="h-4 w-4" />
+                </button>
                 <DialogHeader>
                     <DialogTitle className="flex items-center gap-3">
                         <div
@@ -202,8 +217,8 @@ export function SyncProgressModal({ isOpen, onComplete, days = 90 }: SyncProgres
                         </div>
                     )}
 
-                    {/* Close button */}
-                    {(status === 'complete' || status === 'error') && (
+                    {/* Close/Retry buttons */}
+                    {status === 'complete' && (
                         <Button
                             onClick={handleClose}
                             className="w-full h-10 rounded-xl text-white"
@@ -211,6 +226,25 @@ export function SyncProgressModal({ isOpen, onComplete, days = 90 }: SyncProgres
                         >
                             确定
                         </Button>
+                    )}
+                    {status === 'error' && (
+                        <div className="flex gap-2">
+                            <Button
+                                onClick={handleRetry}
+                                className="flex-1 h-10 rounded-xl text-white"
+                                style={{ backgroundColor: URGENCY_COLORS.indigo.main }}
+                            >
+                                <RefreshCw className="w-4 h-4 mr-1.5" />
+                                重试
+                            </Button>
+                            <Button
+                                onClick={handleClose}
+                                variant="outline"
+                                className="flex-1 h-10 rounded-xl"
+                            >
+                                关闭
+                            </Button>
+                        </div>
                     )}
                 </div>
             </DialogContent>

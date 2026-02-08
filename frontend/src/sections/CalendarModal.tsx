@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, Calendar, Clock, CalendarDays } from 'lucide-react';
 import type { UrgentDDL } from '@/types';
 import { URGENCY_COLORS } from '@/types';
+import { useTheme } from '@/contexts/ThemeContext';
 
 interface CalendarModalProps {
     isOpen: boolean;
@@ -17,12 +18,18 @@ interface CalendarModalProps {
     onDDLClick: (ddl: UrgentDDL) => void;
 }
 
-const WEEKDAYS = ['日', '一', '二', '三', '四', '五', '六'];
-const MONTHS = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'];
-
 export function CalendarModal({ isOpen, onClose, ddlList, onDDLClick }: CalendarModalProps) {
+    const { t, language } = useTheme();
     const [currentDate, setCurrentDate] = useState(new Date());
-    const [selectedDate, setSelectedDate] = useState<string | null>(null); // 新增：选中的日期
+    const [selectedDate, setSelectedDate] = useState<string | null>(null);
+
+    // Localized weekdays and months
+    const WEEKDAYS = language === 'zh'
+        ? ['日', '一', '二', '三', '四', '五', '六']
+        : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const MONTHS = language === 'zh'
+        ? ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+        : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
@@ -108,7 +115,7 @@ export function CalendarModal({ isOpen, onClose, ddlList, onDDLClick }: Calendar
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
             <DialogContent
-                className="max-w-lg p-0 overflow-hidden"
+                className="max-w-2xl p-0 overflow-hidden"
                 style={{ backgroundColor: '#FEFDF9', border: '1px solid #E8E4DB' }}
             >
                 {/* 顶部色条 */}
@@ -122,7 +129,7 @@ export function CalendarModal({ isOpen, onClose, ddlList, onDDLClick }: Calendar
                         >
                             <Calendar className="w-4 h-4" style={{ color: URGENCY_COLORS.indigo.main }} />
                         </div>
-                        <span style={{ color: '#2A2A2A' }}>DDL 日历</span>
+                        <span style={{ color: '#2A2A2A' }}>{t('calendar.title')}</span>
                     </DialogTitle>
                 </DialogHeader>
 
@@ -140,7 +147,7 @@ export function CalendarModal({ isOpen, onClose, ddlList, onDDLClick }: Calendar
 
                         <div className="flex items-center gap-3">
                             <span className="text-lg font-semibold" style={{ color: '#2A2A2A' }}>
-                                {year}年 {MONTHS[month]}
+                                {currentDate.toLocaleDateString(language === 'zh' ? 'zh-CN' : 'en-US', { year: 'numeric', month: 'long' })}
                             </span>
                             <Button
                                 variant="outline"
@@ -149,7 +156,7 @@ export function CalendarModal({ isOpen, onClose, ddlList, onDDLClick }: Calendar
                                 className="h-7 px-2 text-xs rounded-md"
                                 style={{ borderColor: '#E8E4DB' }}
                             >
-                                今天
+                                {t('calendar.today')}
                             </Button>
                         </div>
 
@@ -240,8 +247,8 @@ export function CalendarModal({ isOpen, onClose, ddlList, onDDLClick }: Calendar
                                             )}
                                             <span className="text-xs font-medium" style={{ color: '#6B6B6B' }}>
                                                 {showSelectedDate
-                                                    ? `${selectedDate} 的DDL（${selectedDDLs.length}个）`
-                                                    : `即将到期的DDL（${ddlList.length}个）`
+                                                    ? t('calendar.ddl_on_date').replace('{date}', selectedDate || '').replace('{count}', String(selectedDDLs.length))
+                                                    : t('calendar.upcoming_ddl').replace('{count}', String(ddlList.length))
                                                 }
                                             </span>
                                         </div>
@@ -253,7 +260,7 @@ export function CalendarModal({ isOpen, onClose, ddlList, onDDLClick }: Calendar
                                                 className="h-6 px-2 text-xs"
                                                 style={{ color: '#9B9B9B' }}
                                             >
-                                                查看全部
+                                                {t('calendar.view_all')}
                                             </Button>
                                         )}
                                     </div>
@@ -280,7 +287,7 @@ export function CalendarModal({ isOpen, onClose, ddlList, onDDLClick }: Calendar
                                                             color: URGENCY_COLORS[ddl.urgency].main
                                                         }}
                                                     >
-                                                        {ddl.days_left === 0 ? '今天' : ddl.days_left === 1 ? '明天' : `${ddl.days_left}天后`}
+                                                        {ddl.days_left === 0 ? t('calendar.days_left_0') : ddl.days_left === 1 ? t('calendar.days_left_1') : t('calendar.days_left_n').replace('{n}', String(ddl.days_left))}
                                                     </span>
                                                 </div>
                                             ))}
@@ -288,7 +295,7 @@ export function CalendarModal({ isOpen, onClose, ddlList, onDDLClick }: Calendar
                                     ) : (
                                         <div className="text-center py-4" style={{ color: '#9B9B9B' }}>
                                             <CalendarDays className="w-8 h-8 mx-auto mb-2 opacity-40" />
-                                            <p className="text-sm">该日期无DDL</p>
+                                            <p className="text-sm">{t('calendar.no_ddl')}</p>
                                         </div>
                                     )}
                                 </>

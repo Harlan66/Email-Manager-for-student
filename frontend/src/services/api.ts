@@ -102,12 +102,16 @@ export interface SyncCallbacks {
 
 /**
  * Sync emails with real-time progress updates via SSE
+ * @param days Number of days to sync
+ * @param callbacks Event callbacks for progress updates
+ * @param forceFirst Force full sync strategy (7+ days) instead of incremental
  */
 export async function syncEmailsWithProgress(
     days: number,
-    callbacks: SyncCallbacks
+    callbacks: SyncCallbacks,
+    forceFirst: boolean = false
 ): Promise<void> {
-    const url = `${API_BASE_URL}/emails/sync-stream?days=${days}`;
+    const url = `${API_BASE_URL}/emails/sync-stream?days=${days}&force_first=${forceFirst}`;
 
     try {
         const response = await fetch(url);

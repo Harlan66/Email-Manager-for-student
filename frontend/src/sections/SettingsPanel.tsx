@@ -45,6 +45,7 @@ interface SettingsPanelProps {
   onClose: () => void;
   settings: SettingsConfig;
   onSave: (settings: SettingsConfig) => void;
+  onForceSync?: () => void;
 }
 
 // 卡片式Radio选项
@@ -78,7 +79,7 @@ const radioOptions: RadioCardOption[] = [
   },
 ];
 
-export function SettingsPanel({ isOpen, onClose, settings, onSave }: SettingsPanelProps) {
+export function SettingsPanel({ isOpen, onClose, settings, onSave, onForceSync }: SettingsPanelProps) {
   const { setTheme, setLanguage, t } = useTheme();
   // Clear masked passwords on initialization so user must re-enter
   const initSettings = (): SettingsConfig => {
@@ -104,7 +105,7 @@ export function SettingsPanel({ isOpen, onClose, settings, onSave }: SettingsPan
   // Handle close with unsaved changes check
   const handleClose = () => {
     if (isDirty) {
-      if (!window.confirm('有未保存的更改，确定要退出吗？')) {
+      if (!window.confirm(t('settings.unsaved_confirm'))) {
         return;
       }
     }
@@ -150,11 +151,11 @@ export function SettingsPanel({ isOpen, onClose, settings, onSave }: SettingsPan
     // 验证 API Key
     // 验证 API Key
     if (aiMode === 'api' && !localSettings.api.key) {
-      toast.error(t('settings.api_key_required') || 'API模式需要填写 API Key');
+      toast.error(t('settings.api_key_required'));
       return;
     }
     if (aiMode === 'hybrid' && !localSettings.hybrid.api_key) {
-      toast.error(t('settings.api_key_required') || '混合模式需要填写 API Key');
+      toast.error(t('settings.api_key_required'));
       return;
     }
 
@@ -164,13 +165,13 @@ export function SettingsPanel({ isOpen, onClose, settings, onSave }: SettingsPan
     // Save to parent component
     onSave({ ...localSettings, ai_mode: aiMode });
     setIsDirty(false);
-    toast.success('设置已保存');
+    toast.success(t('toast.settings_saved'));
     onClose();
   };
 
   const handleTestConnection = async (type: string) => {
     setTestingConnection(type);
-    toast.info(`正在测试${type}连接...`);
+    toast.info(t('settings.testing_connection').replace('{type}', type));
 
     try {
       let result: any;
@@ -678,8 +679,17 @@ export function SettingsPanel({ isOpen, onClose, settings, onSave }: SettingsPan
               </div>
             </div>
 
-            {/* 开发者工具 */}
-            <div className="pt-2 border-t border-gray-100">
+            {/* 同步管理 */}
+            <div className="pt-2 border-t border-gray-100 space-y-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={onForceSync}
+                className="w-full h-9 rounded-lg text-xs border-orange-200 text-orange-600 hover:bg-orange-50"
+              >
+                {t('settings.force_sync')}
+              </Button>
+
               <Button
                 variant="outline"
                 size="sm"
@@ -694,7 +704,7 @@ export function SettingsPanel({ isOpen, onClose, settings, onSave }: SettingsPan
                 className="w-full h-9 rounded-lg text-xs"
                 style={{ color: 'var(--light-ink)' }}
               >
-                📊 导出测试报告 (JSON)
+                {t('settings.export_report')}
               </Button>
             </div>
           </div>

@@ -263,6 +263,16 @@
     border-color: var(--pale-ochre);
   }
 
+  .theme-dark .filter-pill:not(.active) {
+    border-color: var(--border-secondary);
+    color: var(--text-secondary);
+  }
+
+  .theme-dark .filter-pill:not(.active):hover {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+  }
+
   /* 统计卡片 */
   .stat-card {
     background-color: var(--ivory-white);
@@ -487,6 +497,7 @@
 .theme-dark ::-webkit-scrollbar-thumb:hover {
   background-color: #E8E6E3;
 }
+
 /* Dark Mode Overrides for Specific Components */
 .dark .settings-modal-content {
   background-color: var(--bg-primary) !important;
@@ -583,8 +594,23 @@
   color: var(--light-ink);
 }
 
-.settings-section-title {
-  @apply text-sm font-medium mb-3 flex items-center;
-  color: var(--light-ink);
+@apply text-sm font-medium mb-3 flex items-center;
+color: var(--light-ink);
 }
 
+/* Fix for hardcoded hover:bg-white in dark mode */
+.theme-dark .hover\:bg-white:hover {
+  background-color: var(--bg-tertiary) !important;
+}
+
+.theme-dark .border-gray-200 {
+  border-color: var(--border-primary) !important;
+}
+
+.theme-dark .hover\:bg-gray-50:hover {
+  background-color: var(--bg-tertiary) !important;
+}
+
+.theme-dark .hover\:bg-gray-100:hover {
+  background-color: var(--bg-secondary) !important;
+}

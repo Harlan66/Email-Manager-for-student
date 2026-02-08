@@ -46,6 +46,7 @@ function App() {
   const [isHelpOpen, setIsHelpOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
   const [isSyncProgressOpen, setIsSyncProgressOpen] = useState(false);
+  const [isForceSync, setIsForceSync] = useState(false);
 
   // 检查API可用性并加载初始数据
   useEffect(() => {
@@ -105,13 +106,14 @@ function App() {
   }, [isApiAvailable]);
 
   // 同步邮件 - 使用进度弹窗
-  const handleSync = useCallback(async () => {
-    console.log('[handleSync] isApiAvailable:', isApiAvailable);
+  const handleSync = useCallback(async (force: boolean = false) => {
+    console.log('[handleSync] isApiAvailable:', isApiAvailable, 'force:', force);
     if (!isApiAvailable) {
       toast.info('演示模式', { description: '请先运行 EmailManager.exe 启动后端服务' });
       return;
     }
     console.log('[handleSync] opening sync progress modal');
+    setIsForceSync(force);
     setIsSyncProgressOpen(true);
   }, [isApiAvailable]);
 
@@ -311,7 +313,7 @@ function App() {
             <Button
               variant="ghost"
               size="sm"
-              onClick={handleSync}
+              onClick={() => handleSync()}
               disabled={isSyncProgressOpen}
               className="h-9 px-3 rounded-xl hover:bg-gray-100 transition-all"
               title={t('nav.sync')}
@@ -418,6 +420,10 @@ function App() {
         onClose={() => setIsSettingsPanelOpen(false)}
         settings={settings}
         onSave={handleSettingsSave}
+        onForceSync={() => {
+          setIsSettingsPanelOpen(false);
+          handleSync(true);
+        }}
       />
 
       {/* 日历弹窗 */}
@@ -445,6 +451,7 @@ function App() {
         isOpen={isSyncProgressOpen}
         onComplete={handleSyncComplete}
         days={40}
+        forceFirst={isForceSync}
       />
     </div>
   );

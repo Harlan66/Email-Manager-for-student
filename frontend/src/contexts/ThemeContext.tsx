@@ -118,11 +118,19 @@ const translations: Record<Language, Record<string, string>> = {
 
         'email_list.title': '邮件列表',
         'email_list.count': '共 {count} 封',
+        'email_list.empty': '暂无邮件',
+        'email_list.tags': '标签:',
+        'email_list.clear': '清除',
 
         'settings.app_password': '应用密码',
         'settings.local_model': '本地模型',
         'settings.host_address': '主机地址',
         'settings.api_provider': 'API服务商',
+        'settings.unsaved_confirm': '有未保存的更改，确定要退出吗？',
+        'settings.testing_connection': '正在测试{type}连接...',
+        'settings.force_sync': '🔄 强制全量同步 (最近7天)',
+        'settings.export_report': '📊 导出测试报告 (JSON)',
+        'settings.api_key_required': '需要填写 API Key',
 
         'mode.local': '本地',
         'mode.api': 'API',
@@ -132,6 +140,17 @@ const translations: Record<Language, Record<string, string>> = {
         'mode.hybrid_desc': '简单任务本地，复杂任务API',
 
         'badge.recommended': '推荐',
+
+        // Calendar
+        'calendar.title': 'DDL 日历',
+        'calendar.today': '今天',
+        'calendar.ddl_on_date': '{date} 的DDL（{count}个）',
+        'calendar.upcoming_ddl': '即将到期的DDL（{count}个）',
+        'calendar.view_all': '查看全部',
+        'calendar.no_ddl': '该日期无DDL',
+        'calendar.days_left_0': '今天',
+        'calendar.days_left_1': '明天',
+        'calendar.days_left_n': '{n}天后',
     },
     en: {
         // Navigation and titles
@@ -239,11 +258,19 @@ const translations: Record<Language, Record<string, string>> = {
 
         'email_list.title': 'Inbox',
         'email_list.count': '{count} emails',
+        'email_list.empty': 'No emails',
+        'email_list.tags': 'Tags:',
+        'email_list.clear': 'Clear',
 
         'settings.app_password': 'App Password',
         'settings.local_model': 'Local Model',
         'settings.host_address': 'Host Address',
         'settings.api_provider': 'Provider',
+        'settings.unsaved_confirm': 'Unsaved changes. Are you sure you want to exit?',
+        'settings.testing_connection': 'Testing {type} connection...',
+        'settings.force_sync': '🔄 Force Sync (Last 7 Days)',
+        'settings.export_report': '📊 Export Test Report (JSON)',
+        'settings.api_key_required': 'API Key is required',
 
         'mode.local': 'Local',
         'mode.api': 'API',
@@ -253,6 +280,17 @@ const translations: Record<Language, Record<string, string>> = {
         'mode.hybrid_desc': 'Local for simple, API for complex',
 
         'badge.recommended': 'Recommended',
+
+        // Calendar
+        'calendar.title': 'DDL Calendar',
+        'calendar.today': 'Today',
+        'calendar.ddl_on_date': 'DDLs on {date} ({count})',
+        'calendar.upcoming_ddl': 'Upcoming DDLs ({count})',
+        'calendar.view_all': 'View All',
+        'calendar.no_ddl': 'No DDL on this date',
+        'calendar.days_left_0': 'Today',
+        'calendar.days_left_1': 'Tomorrow',
+        'calendar.days_left_n': 'In {n} days',
     },
 };
 

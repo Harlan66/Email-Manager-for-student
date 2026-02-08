@@ -56,10 +56,14 @@ async def get_emails(
 
 
 @router.get("/emails/sync-stream")
-async def sync_emails_stream(days: int = Query(40, ge=1, le=180)):
+async def sync_emails_stream(
+    request_days: int = Query(90, ge=1, le=365, alias="days"),
+    force_first: bool = Query(False, description="Force first sync strategy (7+ days)")
+):
     """
     Sync emails with streaming progress updates (SSE).
     Returns server-sent events with progress info.
+    Use force_first=true to force a full sync instead of incremental.
     """
     from sse_starlette.sse import EventSourceResponse
     import json
@@ -77,16 +81,17 @@ async def sync_emails_stream(days: int = Query(40, ge=1, le=180)):
             yield {"event": "error", "data": json.dumps({"message": "请先配置邮箱设置"})}
             return
         
-        # Determine sync strategy based on history
-        is_first = db.is_first_sync()
+        # Determine sync strategy based on history (or force_first parameter)
+        is_first = db.is_first_sync() or force_first
         sync_config = config.get("sync", {})
         
         if is_first:
             strategy = sync_config.get("first_sync", {"days": 7, "batch_size": 10, "delay_between_batches_ms": 500})
             sync_type = "first_sync"
+            msg = "全量同步" if force_first else "首次同步"
             yield {"event": "status", "data": json.dumps({
                 "status": "connecting", 
-                "message": f"首次同步：将获取最近{strategy.get('days', 7)}天邮件..."
+                "message": f"{msg}：将获取最近{strategy.get('days', 7)}天邮件..."
             })}
         else:
             strategy = sync_config.get("incremental_sync", {"days": 3, "batch_size": 20, "delay_between_batches_ms": 200})
@@ -96,10 +101,11 @@ async def sync_emails_stream(days: int = Query(40, ge=1, le=180)):
                 "message": f"增量同步：检查最近{strategy.get('days', 3)}天新邮件..."
             })}
         
-        days = strategy.get("days", 7)
+        # Use request days if it's greater than strategy days, otherwise use strategy days
+        days = max(request_days, strategy.get("days", 7))
         batch_size = strategy.get("batch_size", 10)
         delay_ms = strategy.get("delay_between_batches_ms", 500)
-        max_emails = sync_config.get("max_emails_per_sync", 200)
+        max_emails = sync_config.get("max_emails_per_sync", 1000)
         
         await asyncio.sleep(0)
         
